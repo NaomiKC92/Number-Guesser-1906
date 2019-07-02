@@ -4,7 +4,7 @@
     <title>Number Guesser</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,900&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -22,28 +22,40 @@
         <article class="article__range">
           <h3>Set Range</h3>
           <form class="article__range--form">
-            <label class="article__label">Min Range</label>
-            <input type="number" class="range__input--min">
-            <label class="article__label">Max Range</label>
-            <input type="number" class="range__input--max">
+            <div class="article__range--label">
+              <label class="article__label">Min Range</label>
+              <input type="number" class="range__input" id="range__input--min">
+            </div>
+            <div class="article__range--format">
+              <label class="article__label">Max   Range</label>
+              <input type="number"   class="range__input"   id="range__input--max">
+            </div>
             <button class="range__btn--update">UPDATE</button>
           </form>
         </article>
         <article class="article__challenge">
           <p>The Current Range is <span class="challenge__" id="">1</span> to <span class="challenge__" id="">100</span></p>
           <h3>Challenger 1</h3>
-          <form class="article__challenge--form1">
-            <label class="article__label">Name</label>
-            <input type="text" class="challenge__input--name1">
-            <label class="article__label">Guess</label>
-            <input type="number" class="challenge__input--guess1">
+          <form class="article__challenge--form">
+            <div class="article__challenge--format-name">
+              <label class="article__label">Name</label>
+              <input type="text" class="challenge__input--name">
+            </div>
+            <div class="article__challenge--format-guess">
+              <label class="article__label">Guess</label>
+              <input type="number" class="challenge__input--guess">
+            </div>
           </form>
           <h3>Challenger 2</h3>
-          <form class="article__challenge--form2">
-            <label class="article__label">Name</label>
-            <input type="text" class="challenge__input--name2">
-            <label class="article__label">Guess</label>
-            <input type="number" class="challenge__input--guess2">
+          <form class="article__challenge--form">
+            <div class="article__challenge--format-name">
+              <label class="article__label">Name</label>
+              <input type="text" class="challenge__input--name">
+            </div>
+            <div class="article__challenge--format-guess">
+              <label class="article__label">Guess</label>
+              <input type="number" class="challenge__input--guess">
+          </div>
           </form>
           <div class="article__btns">
             <button class="">SUBMIT GUESS</button>
@@ -66,6 +78,24 @@
             <p class="article__score--number">3</p>
             <p>that's too low</p>
           </div>
+        </article>
+      </section>
+      <section class="main__section--right">
+        <article class="article__card">
+          <article class="article__card--header">
+            <h4>CHALLENGER 1 NAME</h4>
+            <p>vs</p>
+            <h4>CHALLENGER 2 NAME</h4>
+          </article>
+          <article class="article__card--win">
+            <h5>CHALLENGER 2 NAME</h5>
+            <h5>WINNER</h5>
+          </article> 
+          <article class="article__card--data">
+            <p>47 GUESSES</p>
+            <p>1.35 MINUTES</p>
+            <img src="">
+          </article> 
         </article>
       </section>
     </main>

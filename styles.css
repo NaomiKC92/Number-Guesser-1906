@@ -1,3 +1,16 @@
+* {
+  font-family: 'Open Sans';
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+  /* border: 1px solid red; */
+}
+
+/* body{
+  display: flex;
+  flex-direction: column;
+} */
+
 /* header! */
 header {
   display: flex;
@@ -46,4 +59,113 @@ header {
   height: 1px;
   width: 90px;
   background-color: white;
+}
+
+
+.main__section--left {
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  border-right: 2px solid #6e6e6e;
+}
+
+.main__section--right {
+  color: #fff;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+
+.article__range {
+  border: 2px solid #d0d2d3;
+  height: 155px;
+  width: 93%;
+  padding: 15px;
+  margin: 17px auto;
+}
+
+h3 {
+  color: #6e6e6e;
+  font-size: 23px;
+  font-weight: 900;
+}
+
+.article__range--form {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.article__label {
+  font-weight: 300;
+  font-size: 22px;
+  color: #6e6e6e;
+}
+
+.range__input {
+  padding: 5px;
+  font-size: 16px;
+  width: 200px;
+  height: 40px;
+}
+
+.range__btn--update {
+  align-self: flex-end;
+  height: 40px;
+  width: 170px;
+  border-radius: 25px;
+  background-color: #6e6e6e;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.article__challenge {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #d0d2d3;
+  width: 93%;
+  padding: 15px;
+  margin: 17px auto;
+}
+
+.article__challenge--form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.challenge__input--name {
+  width: 380px;
+  height: 40px;
+}
+
+.article__challenge--format-name {
+  width: 275px;
+}
+
+.article__challenge--format-guess {
+  width: 180px;
+}
+
+.challenge__input--guess {
+  width: 200px;
+  height: 40px;
+}
+
+button {
+  width: 180px;
+  border-radius: 25px;
+  height: 40px;
+  background-color: #6e6e6e;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 700;
+
 }
