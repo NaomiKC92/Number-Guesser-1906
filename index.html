@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html> 
+<html>
   <head>
     <title>Number Guesser</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
   </head>
   <body>
@@ -24,6 +24,27 @@
             <input type="number" class="range__input--max">
             <button class="range__btn--update">UPDATE</button>
           </form>
+        </article>
+        <article class="article__challenge">
+          <p>The Current Range is <span class="challenge__" id="">1</span> to <span class="challenge__" id="">100</span></p>
+          <h3>Challenger 1</h3>
+          <form class="article__challenge--form1">
+            <label class="article__label">Name</label>
+            <input type="text" class="challenge__input--name1">
+            <label class="article__label">Guess</label>
+            <input type="number" class="challenge__input--guess1">
+          </form>
+          <form class="article__challenge--form2">
+            <label class="article__label">Name</label>
+            <input type="text" class="challenge__input--name2">
+            <label class="article__label">Guess</label>
+            <input type="number" class="challenge__input--guess2">
+          </form>
+          <div class="article__btns">
+            <button>SUBMIT GUESS</button>
+            <button>RESET GAME</button>
+            <button>CLEAR GAME</button>
+          </div>
         </article>
       </section>
     </main>
