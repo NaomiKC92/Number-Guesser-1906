@@ -62,7 +62,7 @@ header {
 }
 
 .header__div--lines {
-  background-color: white;
+  background-color: #fff;
   height: 1px;
   width: 90px;
 }
@@ -183,7 +183,7 @@ button {
   font-weight: 700;
   height: 45px;
   width: 30%;
-} 
+}
 
 .btn__submit-guess {
   width: 35%;
@@ -245,31 +245,76 @@ h4 {
   background-color: #d0d2d3;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  /* float: right; */
   width: 50%;
+  /* height: 100%; */
 }
 
 .article__card {
   align-items: center;
   background-color: #fff;
   border: 2px solid #6e6e6e;
+  width: 90%;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   margin: 17px auto;
-  padding: 15px;
-  width: 90%;
   }
 
 .article__card--header {
   align-items: center;
   display: flex;
   justify-content: space-around;
-  margin-bottom; 20px;
-  width: 80%;
+  width: 95%;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #d0d2d3;
+
 }
 
 .article__card--win {
   align-items: center;
   display: flex;
   flex-direction: column;
+}
+
+h5 {
+  font-size: 28pt;
+  color: #6e6e6e;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 15px;
+}
+
+.article__card--h1--lighter{
+  font-weight: lighter;
+  margin-top: -8px;
+  margin-bottom: 15px;
+}
+
+.card__p--vs{
+  margin: 0;
+  font-size: 16px;
+}
+
+
+.article__card--data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 95%;
+  border-top: 2px solid #d0d2d3;
+  padding-top: 10px;
+}
+
+.article__card--img {
+  height: 28px;
+}
+
+.card__data--p {
+  font-size: 18px;
+  margin: 0;
+  color: #6e6e6e;
+}
+
+.card_data--p--bold {
+  font-weight: bold;
 }
