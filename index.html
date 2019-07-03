@@ -4,7 +4,7 @@
     <title>Number Guesser</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -65,18 +65,20 @@
         </article>
         <article class="article__scores">
           <h3>Latest Score</h3>
-          <div class="article__scores--info1">
-            <h4>Challenger 1 Name</h4>
-            <p>current guess</p>
-            <p class="article__score--number">97</p>
-            <p>that's too high</p>
-          </div>
-          <div class="article__scores--divider"></div>
-          <div class="article__scores--info2">
-            <h4>Challenger 2 Name</h4>
-            <p>current guess</p>
-            <p class="article__score--number">3</p>
-            <p>that's too low</p>
+          <div class="article__scores--results">
+            <div class="article__scores--info">
+              <h4>Challenger 1 Name</h4>
+              <p class="scores__current-guess">current guess</p>
+              <p class="article__scores--number">?</p>
+              <p class="scores__standing">that's too high</p>
+            </div>
+            <div class="article__scores--divider"></div>
+            <div class="article__scores--info">
+              <h4>Challenger 2 Name</h4>
+              <p class="scores__current-guess">current guess</p>
+              <p class="article__scores--number">?</p>
+              <p class="scores__standing">that's too low</p>
+            </div>
           </div>
         </article>
       </section>
