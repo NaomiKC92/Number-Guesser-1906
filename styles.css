@@ -1,6 +1,6 @@
 * {
-  font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
   /* border: 1px solid red; */
@@ -19,23 +19,23 @@ main {
 /* HEADER */
 
 header {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   background-color: #404041;
+  display: flex;
+  flex-direction: column;
 }
 
 .header__format {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .header__h1 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: lighter;
-  font-size: 60px;
   color: #DD1972;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 60px;
+  font-weight: lighter;
   margin: 0;
   margin-top: 8px;
 }
@@ -45,45 +45,45 @@ header {
 }
 
 .header__div--format {
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: space-between;
   margin-bottom: 20px;
   width: 100%;
-  justify-content: space-between;
 }
 
 .header__h2 {
+  color: #ffffff;
   font-family: 'Open Sans', sans-serif;
   font-weight: lighter;
   font-size: 20px;
-  color: #ffffff;
   margin: 0;
 }
 
 .header__div--lines {
+  background-color: white;
   height: 1px;
   width: 90px;
-  background-color: white;
 }
 
 
 .main__section--left {
   background-color: #f7f7f7;
+  border-right: 2px solid #6e6e6e;
   display: flex;
   flex-direction: column;
-  width: 50%;
   height: 100%;
-  border-right: 2px solid #6e6e6e;
+  width: 50%;
 }
 
 .article__range {
   background-color: #fff;
   border: 2px solid #d0d2d3;
   height: 155px;
-  width: 93%;
-  padding: 15px;
   margin: 17px auto;
+  padding: 15px;
+  width: 93%;
 }
 
 h3 {
@@ -93,43 +93,43 @@ h3 {
 }
 
 .article__range--form {
-  margin-top: 8px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-top: 8px;
 }
 
 .article__label {
-  font-weight: 300;
-  font-size: 22px;
   color: #6e6e6e;
+  font-size: 22px;
+  font-weight: 300;
 }
 
 .range__input {
-  padding: 5px;
   font-size: 16px;
-  width: 200px;
   height: 40px;
+  padding: 5px;
+  width: 200px;
 }
 
 .range__btn--update {
+  background-color: #6e6e6e;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 19px;
   height: 45px;
   width: 170px;
-  border-radius: 25px;
-  background-color: #6e6e6e;
-  color: #fff;
-  font-size: 19px;
-  font-weight: 700;
 }
 
 .article__challenge {
   background-color: #fff;
+  border: 2px solid #d0d2d3;
   display: flex;
   flex-direction: column;
-  border: 2px solid #d0d2d3;
-  width: 93%;
-  padding: 15px;
   margin: 17px auto;
+  padding: 15px;
+  width: 93%;
 }
 
 p {
@@ -150,13 +150,13 @@ p {
 }
 
 .challenge__input--name {
-  width: 380px;
   height: 40px;
+  width: 380px;
 }
 
 .article__challenge--format-name {
-  width: 50%;
   margin-right: 80px;
+  width: 50%;
 }
 
 .article__challenge--format-guess {
@@ -164,8 +164,8 @@ p {
 }
 
 .challenge__input--guess {
-  width: 100%;
   height: 40px;
+  width: 100%;
 }
 
 .article__btns {
@@ -176,13 +176,13 @@ p {
 }
 
 button {
-  width: 30%;
-  border-radius: 25px;
-  height: 45px;
   background-color: #6e6e6e;
+  border-radius: 25px;
   color: #fff;
   font-size: 19px;
   font-weight: 700;
+  height: 45px;
+  width: 30%;
 } 
 
 .btn__submit-guess {
@@ -193,9 +193,9 @@ button {
   background-color: #fff;
   border: 2px solid #d0d2d3;
   height: 300px;
-  width: 93%;
-  padding: 10px;
   margin: 17px auto;
+  padding: 10px;
+  width: 93%;
 }
 
 .article__scores--results {
@@ -220,24 +220,24 @@ h4 {
 }
 
 .scores__current-guess {
-  font-weight: 300;
-  font-size: 22px;
   color: #6e6e6e;
+  font-size: 22px;
+  font-weight: 300;
   margin-bottom: 0;
 }
 
 .scores__standing {
-  font-weight: 300;
   color: #6e6e6e;
   font-size: 25px;
+  font-weight: 300;
   margin-top: 0;
 }
 
 .article__scores--divider {
-  height: 225px;
-  width: 2px;
   background-color: #d0d2d3;
+  height: 225px;
   margin-bottom: 20px;
+  width: 2px;
 }
 
 /* right side */
@@ -245,31 +245,31 @@ h4 {
   background-color: #d0d2d3;
   display: flex;
   flex-direction: column;
-  width: 50%;
   height: 100%;
+  width: 50%;
 }
 
 .article__card {
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #6e6e6e;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  border: 2px solid #6e6e6e;
-  width: 90%;
-  padding: 15px;
   margin: 17px auto;
-  background-color: #fff;
+  padding: 15px;
+  width: 90%;
   }
 
 .article__card--header {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-around;
-  width: 80%;
   margin-bottom; 20px;
+  width: 80%;
 }
 
 .article__card--win {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
