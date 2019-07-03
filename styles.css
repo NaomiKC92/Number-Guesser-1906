@@ -1,17 +1,23 @@
 * {
   font-family: 'Open Sans';
   box-sizing: border-box;
-  margin:0;
+  margin: 0;
   padding: 0;
   /* border: 1px solid red; */
 }
 
-/* body{
+body {
   display: flex;
   flex-direction: column;
-} */
+}
 
-/* header! */
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+/* HEADER */
+
 header {
   display: flex;
   flex-direction: column;
@@ -68,7 +74,6 @@ header {
   flex-direction: column;
   width: 50%;
   height: 100%;
-  position: fixed;
   border-right: 2px solid #6e6e6e;
 }
 
@@ -82,6 +87,7 @@ header {
 }
 
 .article__range {
+  background-color: #fff;
   border: 2px solid #d0d2d3;
   height: 155px;
   width: 93%;
@@ -90,7 +96,7 @@ header {
 }
 
 h3 {
-  color: #6e6e6e;
+  color: #404041;
   font-size: 23px;
   font-weight: 900;
 }
@@ -116,8 +122,7 @@ h3 {
 }
 
 .range__btn--update {
-  align-self: flex-end;
-  height: 40px;
+  height: 45px;
   width: 170px;
   border-radius: 25px;
   background-color: #6e6e6e;
@@ -127,6 +132,7 @@ h3 {
 }
 
 .article__challenge {
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   border: 2px solid #d0d2d3;
@@ -135,10 +141,21 @@ h3 {
   margin: 17px auto;
 }
 
+p {
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 23px;
+}
+
+.range__number--bold {
+  color: #404041;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
 .article__challenge--form {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
 .challenge__input--name {
@@ -147,25 +164,45 @@ h3 {
 }
 
 .article__challenge--format-name {
-  width: 275px;
+  width: 50%;
+  margin-right: 80px;
 }
 
 .article__challenge--format-guess {
-  width: 180px;
+  width: 50%;
 }
 
 .challenge__input--guess {
-  width: 200px;
+  width: 100%;
   height: 40px;
 }
 
+.article__btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
 button {
-  width: 180px;
+  width: 30%;
   border-radius: 25px;
-  height: 40px;
+  height: 45px;
   background-color: #6e6e6e;
   color: #fff;
   font-size: 19px;
   font-weight: 700;
+} 
 
+.btn__submit-guess {
+  width: 35%;
+}
+
+.article__scores {
+  background-color: #fff;
+  border: 2px solid #d0d2d3;
+  height: 400px;
+  width: 93%;
+  padding: 15px;
+  margin: 17px auto;
 }
