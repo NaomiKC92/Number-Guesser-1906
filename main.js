@@ -31,14 +31,9 @@ function generateRandomNum() {
     minRangeInput = document.querySelector('#range__input--min').value;
     maxRangeInput = document.querySelector('#range__input--max').value;
 
-    console.log(maxRangeInput);
-    console.log(minRangeInput);
-
     var randNum = Math.floor(Math.random() * (parseInt(maxRangeInput) - parseInt(minRangeInput)) + parseInt(minRangeInput));
-
     console.log(randNum);
-
-    // return Math.floor(Math.random() * maxRangeInput + minRangeInput);
+    return randNum; 
    }
 
 
