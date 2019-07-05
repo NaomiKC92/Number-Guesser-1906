@@ -15,15 +15,39 @@ var currentGuess1 = document.querySelector('#article__scores--number1');
 var currentGuess2 = document.querySelector('#article__scores--number2');
 
 var clearGameBtn = document.querySelector('.btn__clear-game');
+var randomNumber = 0;
+
+function updateRange() {
+    minRangeInput = document.querySelector('#range__input--min').value;
+    maxRangeInput = document.querySelector('#range__input--max').value;
+
+    setRangeLow.innerHTML = minRangeInput;
+    minRangeInput.value = "";
+    setRangeHigh.innerHTML = maxRangeInput;
+    maxRangeInput.value = "";
+   }
+
+function generateRandomNum() {
+    minRangeInput = document.querySelector('#range__input--min').value;
+    maxRangeInput = document.querySelector('#range__input--max').value;
+
+    console.log(maxRangeInput);
+    console.log(minRangeInput);
+
+    var randNum = Math.floor(Math.random() * (parseInt(maxRangeInput) - parseInt(minRangeInput)) + parseInt(minRangeInput));
+
+    console.log(randNum);
+
+    // return Math.floor(Math.random() * maxRangeInput + minRangeInput);
+   }
 
 
 updateBtn.addEventListener('click', function(e) {
     e.preventDefault();
-    setRangeLow.innerHTML = minRangeInput.value;
-    minRangeInput.value = "";
-    setRangeHigh.innerHTML = maxRangeInput.value;
-    maxRangeInput.value = "";
+    updateRange();
+    generateRandomNum();
 });
+
 
 
 submitButton.addEventListener('click', function(e) {
