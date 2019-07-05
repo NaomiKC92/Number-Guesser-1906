@@ -34,27 +34,27 @@
           </form>
         </article>
         <article class="article__challenge">
-          <p>The Current Range is <span class="range__number--bold" class="challenge__" id="">1</span> to <span class="range__number--bold" id="">100</span></p>
+          <p>The Current Range is <span class="range__number--bold" id="range__lower--num">1</span> to <span class="range__number--bold" id="range__higher--num">100</span></p>
           <h3>Challenger 1</h3>
           <form class="article__challenge--form">
             <div class="article__challenge--format-name">
               <label class="article__label">Name</label>
-              <input type="text" class="challenge__input--name">
+              <input type="text" class="challenge__input--name" id="challenge__input--name1">
             </div>
             <div class="article__challenge--format-guess">
               <label class="article__label">Guess</label>
-              <input type="number" class="challenge__input--guess">
+              <input type="number" class="challenge__input--guess" id="challenge__input--guess1">
             </div>
           </form>
           <h3>Challenger 2</h3>
           <form class="article__challenge--form">
             <div class="article__challenge--format-name">
               <label class="article__label">Name</label>
-              <input type="text" class="challenge__input--name">
+              <input type="text" class="challenge__input--name" id="challenge__input--name2">
             </div>
             <div class="article__challenge--format-guess">
               <label class="article__label">Guess</label>
-              <input type="number" class="challenge__input--guess">
+              <input type="number" class="challenge__input--guess" id="challenge__input--guess2">
           </div>
           </form>
           <div class="article__btns">
@@ -67,16 +67,16 @@
           <h3>Latest Score</h3>
           <div class="article__scores--results">
             <div class="article__scores--info">
-              <h4>Challenger 1 Name</h4>
+              <h4 class="article__display--name1">Challenger 1 Name</h4>
               <p class="scores__current-guess">current guess</p>
-              <p class="article__scores--number">?</p>
+              <p class="article__scores--number" id="article__scores--number1">?</p>
               <p class="scores__standing">that's too high</p>
             </div>
             <div class="article__scores--divider"></div>
             <div class="article__scores--info">
-              <h4>Challenger 2 Name</h4>
+              <h4 class="article__display--name2">Challenger 2 Name</h4>
               <p class="scores__current-guess">current guess</p>
-              <p class="article__scores--number">?</p>
+              <p class="article__scores--number" id="article__scores--number2">?</p>
               <p class="scores__standing">that's too low</p>
             </div>
           </div>
@@ -102,4 +102,5 @@
       </section>
     </main>
   </body>
+  <script src="main.js"></script>
 </html>
