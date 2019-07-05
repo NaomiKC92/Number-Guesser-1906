@@ -14,6 +14,8 @@ var challenger2 = document.querySelector('.article__display--name2');
 var currentGuess1 = document.querySelector('#article__scores--number1');
 var currentGuess2 = document.querySelector('#article__scores--number2');
 
+var clearGameBtn = document.querySelector('.btn__clear-game');
+
 
 updateBtn.addEventListener('click', function(e) {
     e.preventDefault();
@@ -27,12 +29,15 @@ updateBtn.addEventListener('click', function(e) {
 submitButton.addEventListener('click', function(e) {
   e.preventDefault();
   challenger1.innerHTML = nameInput1.value;
-  // nameInput1.value = "";
   challenger2.innerHTML = nameInput2.value;
-  // nameInput2.value = "";
   currentGuess1.innerHTML = guessInput1.value;
-  // guessInput1.value = "";
   currentGuess2.innerHTML = guessInput2.value;
-  // guessInput2.value = "";
 });
 
+clearGameBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  nameInput1.value = "";
+  nameInput2.value = "";
+  guessInput1.value = "";
+  guessInput2.value = "";
+});
