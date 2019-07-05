@@ -16,13 +16,20 @@ var currentGuess2 = document.querySelector('#article__scores--number2');
 
 var clearGameBtn = document.querySelector('.btn__clear-game');
 
-
 updateBtn.addEventListener('click', function(e) {
     e.preventDefault();
-    setRangeLow.innerHTML = minRangeInput.value;
+    setRangeLow.innerHTML = (parseInt(minRangeInput.value));
+    console.log(setRangeLow.innerHTML);
     minRangeInput.value = "";
-    setRangeHigh.innerHTML = maxRangeInput.value;
+    setRangeHigh.innerHTML = (parseInt(maxRangeInput.value));
+    console.log(setRangeHigh.innerHTML)
     maxRangeInput.value = "";
+
+    // console.log(minRangeInput.value);
+    // console.log(maxRangeInput.value);
+
+    // var generateRandomNum = Math.floor(Math.random()*(setRangeHigh.value-setRangeLow.value+1)) + setRangeLow.value;
+    // console.log
 });
 
 
