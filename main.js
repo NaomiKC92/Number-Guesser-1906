@@ -18,6 +18,22 @@ var clearGameBtn = document.querySelector('.btn__clear-game');
 var resetGameBtn = document.querySelector('.btn__reset-game');
 
 
+nameInput1.addEventListener('keyup', function() {
+    if (nameInput1.value !== "") {
+         clearGameBtn.disabled = false;
+    } else {
+        clearGameBtn.disabled = true;
+    }
+});
+
+// function disableClearBtn() {
+//     if (nameInput1.value != "") {
+//         clearGameBtn.disabled = false;
+//     }
+// }
+
+
+
 function updateRange() {
     minRangeInput = document.querySelector('#range__input--min').value;
     maxRangeInput = document.querySelector('#range__input--max').value;
@@ -68,4 +84,8 @@ clearGameBtn.addEventListener('click', function(e) {
   guessInput1.value = "";
   guessInput2.value = "";
 });
+
+
+
+
 
