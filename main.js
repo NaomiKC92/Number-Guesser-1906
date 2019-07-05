@@ -15,22 +15,34 @@ var currentGuess1 = document.querySelector('#article__scores--number1');
 var currentGuess2 = document.querySelector('#article__scores--number2');
 
 var clearGameBtn = document.querySelector('.btn__clear-game');
+var randomNumber = 0;
+
+function updateRange() {
+    minRangeInput = document.querySelector('#range__input--min').value;
+    maxRangeInput = document.querySelector('#range__input--max').value;
+
+    setRangeLow.innerHTML = minRangeInput;
+    // minRangeInput.value = "";
+    setRangeHigh.innerHTML = maxRangeInput;
+    // maxRangeInput.value = "";
+    console.log(maxRangeInput);
+   }
+
+function generateRandomNum() {
+
+    randomNumber = Math.floor(Math.random() * (parseInt(maxRangeInput.value) - parseInt(minRangeInput.value + 1)) + parseInt(minRangeInput.value));
+    console.log(maxRangeInput);
+    console.log(minRangeInput);
+   }
+
 
 updateBtn.addEventListener('click', function(e) {
     e.preventDefault();
-    setRangeLow.innerHTML = (parseInt(minRangeInput.value));
-    console.log(setRangeLow.innerHTML);
-    minRangeInput.value = "";
-    setRangeHigh.innerHTML = (parseInt(maxRangeInput.value));
-    console.log(setRangeHigh.innerHTML)
-    maxRangeInput.value = "";
-
-    // console.log(minRangeInput.value);
-    // console.log(maxRangeInput.value);
-
-    // var generateRandomNum = Math.floor(Math.random()*(setRangeHigh.value-setRangeLow.value+1)) + setRangeLow.value;
-    // console.log
+    updateRange();
+    generateRandomNum();
+    // console.log(ranNum);
 });
+
 
 
 submitButton.addEventListener('click', function(e) {
