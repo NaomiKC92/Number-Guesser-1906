@@ -22,17 +22,23 @@ function updateRange() {
     maxRangeInput = document.querySelector('#range__input--max').value;
 
     setRangeLow.innerHTML = minRangeInput;
-    // minRangeInput.value = "";
+    minRangeInput.value = "";
     setRangeHigh.innerHTML = maxRangeInput;
-    // maxRangeInput.value = "";
-    console.log(maxRangeInput);
+    maxRangeInput.value = "";
    }
 
 function generateRandomNum() {
+    minRangeInput = document.querySelector('#range__input--min').value;
+    maxRangeInput = document.querySelector('#range__input--max').value;
 
-    randomNumber = Math.floor(Math.random() * (parseInt(maxRangeInput.value) - parseInt(minRangeInput.value + 1)) + parseInt(minRangeInput.value));
     console.log(maxRangeInput);
     console.log(minRangeInput);
+
+    var randNum = Math.floor(Math.random() * (parseInt(maxRangeInput) - parseInt(minRangeInput)) + parseInt(minRangeInput));
+
+    console.log(randNum);
+
+    // return Math.floor(Math.random() * maxRangeInput + minRangeInput);
    }
 
 
@@ -40,7 +46,6 @@ updateBtn.addEventListener('click', function(e) {
     e.preventDefault();
     updateRange();
     generateRandomNum();
-    // console.log(ranNum);
 });
 
 
