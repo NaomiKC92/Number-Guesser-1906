@@ -16,6 +16,9 @@ var currentGuess2 = document.querySelector('#article__scores--number2');
 var clearGameBtn = document.querySelector('.btn__clear-game');
 var resetGameBtn = document.querySelector('.btn__reset-game');
 
+var scoresStanding1 = document.querySelector('#scores__standing--player1');
+var scoresStanding2 = document.querySelector('#scores__standing--player2');
+
 
 // EVENT LISTENERS
 // clear game button functionality
@@ -115,6 +118,7 @@ guessInput2.addEventListener('keyup', function() {
 
 submitButton.addEventListener('click', function(e) {
   e.preventDefault();
+  guessFeedback();
   challenger1.innerHTML = nameInput1.value;
   challenger2.innerHTML = nameInput2.value;
   currentGuess1.innerHTML = guessInput1.value;
@@ -146,7 +150,13 @@ function generateRandomNum() {
     minRangeInput = document.querySelector('#range__input--min').value;
     maxRangeInput = document.querySelector('#range__input--max').value;
 
-    var randNum = Math.floor(Math.random() * (parseInt(maxRangeInput) - parseInt(minRangeInput)) + parseInt(minRangeInput));
+    randNum = Math.floor(Math.random() * (parseInt(maxRangeInput) - parseInt(minRangeInput)) + parseInt(minRangeInput));
     console.log(randNum);
     return randNum;
    }
+
+ function guessFeedback() {
+   if (guessInput1.value < randNum) {
+     scoresStanding1.innerHTML = "that's too low";
+   }
+ }
