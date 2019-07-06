@@ -159,11 +159,19 @@ function generateRandomNum() {
  function guessFeedbackOne() {
    if (guessInput1.value < randNum) {
      scoresStanding1.innerHTML = "that's too low";
+   } else if (guessInput1.value > randNum) {
+     scoresStanding1.innerHTML = "that's too high";
+   } else {
+     scoresStanding1.innerHTML = "BOOM!";
    }
  }
 
  function guessFeedbackTwo() {
    if (guessInput2.value < randNum) {
      scoresStanding2.innerHTML = "that's too low";
+   } else if (guessInput2.value > randNum) {
+     scoresStanding2.innerHTML = "that's too high";
+   } else {
+     scoresStanding2.innerHTML = "BOOM!";
    }
  }
