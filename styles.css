@@ -92,11 +92,21 @@ h3 {
   font-weight: 900;
 }
 
+.article__range {
+  display: flex;
+  flex-direction: column;
+}
+
+.article__range--format {
+  width: 34%;
+}
+
 .article__range--form {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 8px;
+  margin-left: 0;
 }
 
 .article__label {
@@ -109,16 +119,18 @@ h3 {
   font-size: 16px;
   height: 40px;
   padding: 5px;
-  width: 200px;
+  width: 100%;
 }
 
 .range__btn--update {
+  align-self: flex-end;
   background-color: #6e6e6e;
   border-radius: 25px;
   color: #fff;
   font-weight: 700;
   font-size: 19px;
   height: 45px;
+  outline: none;
   width: 170px;
 }
 
@@ -130,6 +142,10 @@ h3 {
   margin: 17px auto;
   padding: 15px;
   width: 93%;
+}
+
+.challenger2__header{
+  margin-top: 40px;
 }
 
 p {
@@ -147,24 +163,30 @@ p {
 .article__challenge--form {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .challenge__input--name {
+  font-size: 16px;
   height: 40px;
-  width: 380px;
+  padding: 5px;
+  width: 100%;
 }
 
 .article__challenge--format-name {
-  margin-right: 80px;
-  width: 50%;
+  /* margin-right: 80px; */
+  width: 63%;
 }
 
 .article__challenge--format-guess {
-  width: 50%;
+  width: 34%;
 }
 
 .challenge__input--guess {
+  font-size: 16px;
   height: 40px;
+  padding: 5px;
   width: 100%;
 }
 
@@ -182,7 +204,12 @@ button {
   font-size: 19px;
   font-weight: 700;
   height: 45px;
+  outline: none;
   width: 30%;
+}
+
+button:disabled {
+  background-color: #d0d2d3;
 }
 
 .btn__submit-guess {
