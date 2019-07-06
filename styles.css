@@ -119,6 +119,7 @@ h3 {
   font-weight: 700;
   font-size: 19px;
   height: 45px;
+  outline: none;
   width: 170px;
 }
 
@@ -150,7 +151,9 @@ p {
 }
 
 .challenge__input--name {
+  font-size: 16px;
   height: 40px;
+  padding: 5px;
   width: 380px;
 }
 
@@ -164,7 +167,9 @@ p {
 }
 
 .challenge__input--guess {
+  font-size: 16px;
   height: 40px;
+  padding: 5px;
   width: 100%;
 }
 
@@ -182,7 +187,12 @@ button {
   font-size: 19px;
   font-weight: 700;
   height: 45px;
+  outline: none;
   width: 30%;
+}
+
+button:disabled {
+  background-color: #d0d2d3;
 }
 
 .btn__submit-guess {

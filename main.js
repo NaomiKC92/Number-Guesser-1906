@@ -86,6 +86,7 @@ resetGameBtn.addEventListener('click', function(e) {
   generateRandomNum();
   resetInputs();
   resetInnerHTML();
+  clearGameBtn.disabled = true;
 });
 
 // submit button functionality
