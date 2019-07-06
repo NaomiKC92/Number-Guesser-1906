@@ -98,7 +98,7 @@ h3 {
 }
 
 .article__range--format {
-  width: 30%;
+  width: 34%;
 }
 
 .article__range--form {
@@ -144,6 +144,10 @@ h3 {
   width: 93%;
 }
 
+.challenger2__header{
+  margin-top: 40px;
+}
+
 p {
   font-size: 20px;
   font-weight: 300;
@@ -159,22 +163,24 @@ p {
 .article__challenge--form {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .challenge__input--name {
   font-size: 16px;
   height: 40px;
   padding: 5px;
-  width: 380px;
+  width: 100%;
 }
 
 .article__challenge--format-name {
-  margin-right: 80px;
-  width: 50%;
+  /* margin-right: 80px; */
+  width: 63%;
 }
 
 .article__challenge--format-guess {
-  width: 50%;
+  width: 34%;
 }
 
 .challenge__input--guess {
