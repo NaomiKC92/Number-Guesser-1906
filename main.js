@@ -15,7 +15,33 @@ var currentGuess1 = document.querySelector('#article__scores--number1');
 var currentGuess2 = document.querySelector('#article__scores--number2');
 
 var clearGameBtn = document.querySelector('.btn__clear-game');
-var randomNumber = 0;
+var resetGameBtn = document.querySelector('.btn__reset-game');
+
+
+nameInput1.addEventListener('keyup', function() {
+    if (nameInput1.value !== "") {
+        clearGameBtn.disabled = false;
+    }
+});
+
+nameInput2.addEventListener('keyup', function() {
+    if (nameInput2.value !== "") {
+        clearGameBtn.disabled = false;
+    }
+});
+
+guessInput1.addEventListener('keyup', function() {
+    if (guessInput1.value !== "") {
+        clearGameBtn.disabled = false;
+    }
+});
+
+guessInput2.addEventListener('keyup', function() {
+    if (guessInput2.value !== "") {
+        clearGameBtn.disabled = false;
+    }
+});
+
 
 function updateRange() {
     minRangeInput = document.querySelector('#range__input--min').value;
@@ -31,24 +57,16 @@ function generateRandomNum() {
     minRangeInput = document.querySelector('#range__input--min').value;
     maxRangeInput = document.querySelector('#range__input--max').value;
 
-    console.log(maxRangeInput);
-    console.log(minRangeInput);
-
     var randNum = Math.floor(Math.random() * (parseInt(maxRangeInput) - parseInt(minRangeInput)) + parseInt(minRangeInput));
-
     console.log(randNum);
-
-    // return Math.floor(Math.random() * maxRangeInput + minRangeInput);
+    return randNum; 
    }
-
-
+   
 updateBtn.addEventListener('click', function(e) {
     e.preventDefault();
     updateRange();
     generateRandomNum();
 });
-
-
 
 submitButton.addEventListener('click', function(e) {
   e.preventDefault();
@@ -58,10 +76,26 @@ submitButton.addEventListener('click', function(e) {
   currentGuess2.innerHTML = guessInput2.value;
 });
 
+resetGameBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  generateRandomNum();
+  nameInput1.value = "";
+  nameInput2.value = "";
+  guessInput1.value = "";
+  guessInput2.value = "";
+  document.querySelector('.article__range--form').reset();
+});
+
 clearGameBtn.addEventListener('click', function(e) {
   e.preventDefault();
   nameInput1.value = "";
   nameInput2.value = "";
   guessInput1.value = "";
   guessInput2.value = "";
+  clearGameBtn.disabled = true;
 });
+
+
+
+
+
