@@ -118,7 +118,8 @@ guessInput2.addEventListener('keyup', function() {
 
 submitButton.addEventListener('click', function(e) {
   e.preventDefault();
-  guessFeedback();
+  guessFeedbackOne();
+  guessFeedbackTwo();
   challenger1.innerHTML = nameInput1.value;
   challenger2.innerHTML = nameInput2.value;
   currentGuess1.innerHTML = guessInput1.value;
@@ -155,8 +156,14 @@ function generateRandomNum() {
     return randNum;
    }
 
- function guessFeedback() {
+ function guessFeedbackOne() {
    if (guessInput1.value < randNum) {
      scoresStanding1.innerHTML = "that's too low";
+   }
+ }
+
+ function guessFeedbackTwo() {
+   if (guessInput2.value < randNum) {
+     scoresStanding2.innerHTML = "that's too low";
    }
  }
