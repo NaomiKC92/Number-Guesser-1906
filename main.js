@@ -83,18 +83,8 @@ guessInput2.addEventListener('keyup', function() {
 resetGameBtn.addEventListener('click', function(e) {
   e.preventDefault();
   generateRandomNum();
-  nameInput1.value = "";
-  nameInput2.value = "";
-  guessInput1.value = "";
-  guessInput2.value = "";
-  resetGameBtn.disabled = true;
-  document.querySelector('.article__range--form').reset();
-  challenger1.innerHTML = "Challenger Name 1";
-  challenger2.innerHTML = "Challenger Name 2";
-  currentGuess1.innerHTML = "?";
-  currentGuess2.innerHTML = "?";
-  scoresStanding1.innerHTML ="your standing";
-  scoresStanding2.innerHTML ="your standing";
+  resetInputs();
+  resetInnerHTML();
 });
 
 // submit button functionality
@@ -180,4 +170,22 @@ function generateRandomNum() {
    } else {
      scoresStanding2.innerHTML = "BOOM!";
    }
+ }
+
+ function resetInputs() {
+   nameInput1.value = "";
+   nameInput2.value = "";
+   guessInput1.value = "";
+   guessInput2.value = "";
+   resetGameBtn.disabled = true;
+   document.querySelector('.article__range--form').reset();
+ }
+
+ function resetInnerHTML() {
+   challenger1.innerHTML = "Challenger Name 1";
+   challenger2.innerHTML = "Challenger Name 2";
+   currentGuess1.innerHTML = "?";
+   currentGuess2.innerHTML = "?";
+   scoresStanding1.innerHTML ="your standing";
+   scoresStanding2.innerHTML ="your standing";
  }
