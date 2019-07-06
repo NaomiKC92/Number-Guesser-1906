@@ -24,6 +24,23 @@ nameInput1.addEventListener('keyup', function() {
     }
 });
 
+nameInput2.addEventListener('keyup', function() {
+    if (nameInput2.value !== "") {
+        clearGameBtn.disabled = false;
+    }
+});
+
+guessInput1.addEventListener('keyup', function() {
+    if (guessInput1.value !== "") {
+        clearGameBtn.disabled = false;
+    }
+});
+
+guessInput2.addEventListener('keyup', function() {
+    if (guessInput2.value !== "") {
+        clearGameBtn.disabled = false;
+    }
+});
 
 
 function updateRange() {
