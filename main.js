@@ -89,6 +89,12 @@ resetGameBtn.addEventListener('click', function(e) {
   guessInput2.value = "";
   resetGameBtn.disabled = true;
   document.querySelector('.article__range--form').reset();
+  challenger1.innerHTML = "Challenger Name 1";
+  challenger2.innerHTML = "Challenger Name 2";
+  currentGuess1.innerHTML = "?";
+  currentGuess2.innerHTML = "?";
+  scoresStanding1.innerHTML ="your standing";
+  scoresStanding2.innerHTML ="your standing";
 });
 
 // submit button functionality
