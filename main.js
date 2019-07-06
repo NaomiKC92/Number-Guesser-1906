@@ -15,13 +15,10 @@ var currentGuess1 = document.querySelector('#article__scores--number1');
 var currentGuess2 = document.querySelector('#article__scores--number2');
 var clearGameBtn = document.querySelector('.btn__clear-game');
 var resetGameBtn = document.querySelector('.btn__reset-game');
-
 var scoresStanding1 = document.querySelector('#scores__standing--player1');
 var scoresStanding2 = document.querySelector('#scores__standing--player2');
-
 var cardSection = document.querySelector('.main__section--right');
-var winningCard = document.querySelector('.article__card')
-// var displayWinner = document.querySelector('.card__winner-name');
+// var winningCard = document.querySelector('.article__card')
 
 
 // EVENT LISTENERS
@@ -118,16 +115,18 @@ guessInput2.addEventListener('keyup', function() {
 
 submitButton.addEventListener('click', function(e) {
   e.preventDefault();
-  guessFeedbackOne();
-  guessFeedbackTwo();
-//   winningName();
-  appendCard();
+  submitTimeout();
   challenger1.innerHTML = nameInput1.value;
   challenger2.innerHTML = nameInput2.value;
   currentGuess1.innerHTML = guessInput1.value;
   currentGuess2.innerHTML = guessInput2.value;
   submitButton.disabled = true;
 });
+
+function submitTimeout() {
+  setTimeout(guessFeedbackOne, 100);
+  setTimeout(guessFeedbackTwo, 100);
+}
 
 
 // update button functionality
@@ -231,28 +230,3 @@ function generateRandomNum() {
    scoresStanding2.innerHTML ="your standing";
  }
 
- function appendCard() {
-    if (guessInput1.value === randNum) {
-       winningCard.hidden = false;
-    }
-}
-
-
-
-    // cardSection.insertAdjacentHTML("afterbegin", 
-    //     `<article class="article__card">
-    //       <article class="article__card--header">
-    //         <h4>${challenger1.innerHTML}</h4>
-    //         <p class="card__p--vs">vs</p>
-    //         <h4>${challenger2.innerHTML}</h4>
-    //       </article>
-    //       <article class="article__card--win">
-    //         <h5 class="card__winner-name">${displayWinner.innerHTML}</h5>
-    //         <h5 class="article__card--h1--lighter">WINNER</h5>
-    //       </article>
-    //       <article class="article__card--data">
-    //         <p class="card__data--p"><span class="card_data--p--bold">47</span> GUESSES</p>
-    //         <p class="card__data--p"><span class="card_data--p--bold">1.35</span> MINUTES</p>
-    //         <img src="images/close_btn.png" class="article__card--img">
-    //       </article>
-    //     </article>`)
