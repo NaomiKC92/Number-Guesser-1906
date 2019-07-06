@@ -15,10 +15,8 @@ var currentGuess1 = document.querySelector('#article__scores--number1');
 var currentGuess2 = document.querySelector('#article__scores--number2');
 var clearGameBtn = document.querySelector('.btn__clear-game');
 var resetGameBtn = document.querySelector('.btn__reset-game');
-
 var scoresStanding1 = document.querySelector('#scores__standing--player1');
 var scoresStanding2 = document.querySelector('#scores__standing--player2');
-
 var cardSection = document.querySelector('.main__section--right');
 // var winningCard = document.querySelector('.article__card')
 
