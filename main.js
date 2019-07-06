@@ -123,14 +123,11 @@ submitButton.addEventListener('click', function(e) {
   currentGuess1.innerHTML = guessInput1.value;
   currentGuess2.innerHTML = guessInput2.value;
   submitButton.disabled = true;
-
-
 });
 
 function submitTimeout() {
   setTimeout(guessFeedbackOne, 100);
   setTimeout(guessFeedbackTwo, 100);
- 
 }
 
 
