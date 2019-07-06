@@ -20,17 +20,9 @@ var resetGameBtn = document.querySelector('.btn__reset-game');
 
 nameInput1.addEventListener('keyup', function() {
     if (nameInput1.value !== "") {
-         clearGameBtn.disabled = false;
-    } else {
-        clearGameBtn.disabled = true;
+        clearGameBtn.disabled = false;
     }
 });
-
-// function disableClearBtn() {
-//     if (nameInput1.value != "") {
-//         clearGameBtn.disabled = false;
-//     }
-// }
 
 
 
@@ -83,6 +75,7 @@ clearGameBtn.addEventListener('click', function(e) {
   nameInput2.value = "";
   guessInput1.value = "";
   guessInput2.value = "";
+  clearGameBtn.disabled = true;
 });
 
 
