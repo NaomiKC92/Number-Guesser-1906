@@ -13,11 +13,15 @@ var challenger1 = document.querySelector('.article__display--name1');
 var challenger2 = document.querySelector('.article__display--name2');
 var currentGuess1 = document.querySelector('#article__scores--number1');
 var currentGuess2 = document.querySelector('#article__scores--number2');
-
 var clearGameBtn = document.querySelector('.btn__clear-game');
 var resetGameBtn = document.querySelector('.btn__reset-game');
 
+var scoresStanding1 = document.querySelector('#scores__standing--player1');
+var scoresStanding2 = document.querySelector('#scores__standing--player2');
 
+
+// EVENT LISTENERS
+// clear game button functionality
 nameInput1.addEventListener('keyup', function() {
     if (nameInput1.value !== "") {
         clearGameBtn.disabled = false;
@@ -42,7 +46,97 @@ guessInput2.addEventListener('keyup', function() {
     }
 });
 
+clearGameBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  nameInput1.value = "";
+  nameInput2.value = "";
+  guessInput1.value = "";
+  guessInput2.value = "";
+  clearGameBtn.disabled = true;
+});
 
+// reset button functionality
+nameInput1.addEventListener('keyup', function() {
+    if (nameInput1.value !== "") {
+        resetGameBtn.disabled = false;
+    }
+});
+
+nameInput2.addEventListener('keyup', function() {
+    if (nameInput2.value !== "") {
+        resetGameBtn.disabled = false;
+    }
+});
+
+guessInput1.addEventListener('keyup', function() {
+    if (guessInput1.value !== "") {
+        resetGameBtn.disabled = false;
+    }
+});
+
+guessInput2.addEventListener('keyup', function() {
+    if (guessInput2.value !== "") {
+        resetGameBtn.disabled = false;
+    }
+});
+
+resetGameBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  generateRandomNum();
+  nameInput1.value = "";
+  nameInput2.value = "";
+  guessInput1.value = "";
+  guessInput2.value = "";
+  resetGameBtn.disabled = true;
+  document.querySelector('.article__range--form').reset();
+});
+
+// submit button functionality
+nameInput1.addEventListener('keyup', function() {
+    if (nameInput1.value !== "") {
+        submitButton.disabled = false;
+    }
+});
+
+nameInput2.addEventListener('keyup', function() {
+    if (nameInput2.value !== "") {
+        submitButton.disabled = false;
+    }
+});
+
+guessInput1.addEventListener('keyup', function() {
+    if (guessInput1.value !== "") {
+        submitButton.disabled = false;
+    }
+});
+
+guessInput2.addEventListener('keyup', function() {
+    if (guessInput2.value !== "") {
+        submitButton.disabled = false;
+    }
+});
+
+submitButton.addEventListener('click', function(e) {
+  e.preventDefault();
+  guessFeedbackOne();
+  guessFeedbackTwo();
+  challenger1.innerHTML = nameInput1.value;
+  challenger2.innerHTML = nameInput2.value;
+  currentGuess1.innerHTML = guessInput1.value;
+  currentGuess2.innerHTML = guessInput2.value;
+  submitButton.disabled = true;
+});
+
+
+// update button functionality
+updateBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    updateRange();
+    generateRandomNum();
+});
+
+
+//FUNCTIONS
 function updateRange() {
     minRangeInput = document.querySelector('#range__input--min').value;
     maxRangeInput = document.querySelector('#range__input--max').value;
@@ -57,45 +151,27 @@ function generateRandomNum() {
     minRangeInput = document.querySelector('#range__input--min').value;
     maxRangeInput = document.querySelector('#range__input--max').value;
 
-    var randNum = Math.floor(Math.random() * (parseInt(maxRangeInput) - parseInt(minRangeInput)) + parseInt(minRangeInput));
+    randNum = Math.floor(Math.random() * (parseInt(maxRangeInput) - parseInt(minRangeInput)) + parseInt(minRangeInput));
     console.log(randNum);
-    return randNum; 
+    return randNum;
    }
-   
-updateBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    updateRange();
-    generateRandomNum();
-});
 
-submitButton.addEventListener('click', function(e) {
-  e.preventDefault();
-  challenger1.innerHTML = nameInput1.value;
-  challenger2.innerHTML = nameInput2.value;
-  currentGuess1.innerHTML = guessInput1.value;
-  currentGuess2.innerHTML = guessInput2.value;
-});
+ function guessFeedbackOne() {
+   if (guessInput1.value < randNum) {
+     scoresStanding1.innerHTML = "that's too low";
+   } else if (guessInput1.value > randNum) {
+     scoresStanding1.innerHTML = "that's too high";
+   } else {
+     scoresStanding1.innerHTML = "BOOM!";
+   }
+ }
 
-resetGameBtn.addEventListener('click', function(e) {
-  e.preventDefault();
-  generateRandomNum();
-  nameInput1.value = "";
-  nameInput2.value = "";
-  guessInput1.value = "";
-  guessInput2.value = "";
-  document.querySelector('.article__range--form').reset();
-});
-
-clearGameBtn.addEventListener('click', function(e) {
-  e.preventDefault();
-  nameInput1.value = "";
-  nameInput2.value = "";
-  guessInput1.value = "";
-  guessInput2.value = "";
-  clearGameBtn.disabled = true;
-});
-
-
-
-
-
+ function guessFeedbackTwo() {
+   if (guessInput2.value < randNum) {
+     scoresStanding2.innerHTML = "that's too low";
+   } else if (guessInput2.value > randNum) {
+     scoresStanding2.innerHTML = "that's too high";
+   } else {
+     scoresStanding2.innerHTML = "BOOM!";
+   }
+ }
