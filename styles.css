@@ -92,11 +92,21 @@ h3 {
   font-weight: 900;
 }
 
+.article__range {
+  display: flex;
+  flex-direction: column;
+}
+
+.article__range--format {
+  width: 30%;
+}
+
 .article__range--form {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 8px;
+  margin-left: 0;
 }
 
 .article__label {
@@ -109,10 +119,11 @@ h3 {
   font-size: 16px;
   height: 40px;
   padding: 5px;
-  width: 200px;
+  width: 100%;
 }
 
 .range__btn--update {
+  align-self: flex-end;
   background-color: #6e6e6e;
   border-radius: 25px;
   color: #fff;
