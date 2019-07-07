@@ -116,12 +116,15 @@ guessInput2.addEventListener('keyup', function() {
 
 submitButton.addEventListener('click', function(e) {
   e.preventDefault();
+  var validity = stayInRange();
+  if (validity === true) {
   submitTimeout();
   challenger1.innerHTML = nameInput1.value.toUpperCase();
   challenger2.innerHTML = nameInput2.value.toUpperCase();
   currentGuess1.innerHTML = guessInput1.value;
   currentGuess2.innerHTML = guessInput2.value;
   submitButton.disabled = true;
+  }
 });
 
 function submitTimeout() {
@@ -130,7 +133,7 @@ function submitTimeout() {
 }
 
 
-// update button functionality
+// UPDATE BUTTON FUNCTIONALITY //
 updateBtn.addEventListener('click', function(e) {
     e.preventDefault();
     updateRange();
@@ -138,11 +141,10 @@ updateBtn.addEventListener('click', function(e) {
 });
 
 
-//FUNCTIONS
+// FUNCTIONS //
 function updateRange() {
     minRangeInput = document.querySelector('#range__input--min').value;
     maxRangeInput = document.querySelector('#range__input--max').value;
-
     setRangeLow.innerHTML = minRangeInput;
     minRangeInput.value = "";
     setRangeHigh.innerHTML = maxRangeInput;
@@ -152,11 +154,25 @@ function updateRange() {
 function generateRandomNum() {
     minRangeInput = document.querySelector('#range__input--min').value;
     maxRangeInput = document.querySelector('#range__input--max').value;
-
     randNum = Math.floor(Math.random() * (parseInt(maxRangeInput) - parseInt(minRangeInput)) + parseInt(minRangeInput));
     console.log(randNum);
     return randNum;
    }
+
+function stayInRange() {
+    var valid = true;
+    if (guessInput1.value < setRangeLow.innerHTML || guessInput1.value > setRangeHigh.innerHTML) {
+        valid = false;
+        alert("Player 1 guess is out of range, try again")
+    };
+
+    if (guessInput2.value < setRangeLow.innerHTML || guessInput2.value > setRangeHigh.innerHTML) {
+        valid = false;
+        alert("Player 2 guess is out of range, try again")
+    };
+    return valid;
+}
+
 
  function guessFeedbackOne() {
    if (guessInput1.value < randNum) {
