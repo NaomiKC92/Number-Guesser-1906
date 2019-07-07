@@ -205,16 +205,13 @@ button {
   font-weight: 700;
   height: 40px;
   outline: none;
-  width: 30%;
+  width: 31%;
 }
 
 button:disabled {
   background-color: #d0d2d3;
 }
 
-.btn__submit-guess {
-  width: 35%;
-}
 
 .article__scores {
   background-color: #fff;
@@ -367,6 +364,7 @@ h5 {
 
   .main__section--left {
     width: 100%;
+    border: none;
 }
 
   .article__range--form {
@@ -508,7 +506,8 @@ h5 {
     Text-align: center;
   }
 
-  .card__data—-p {
+  .card__data—-p,
+  .card__data--p--bold {
     font-size: 14px;
   }
 
