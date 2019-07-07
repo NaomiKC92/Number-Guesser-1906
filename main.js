@@ -117,8 +117,8 @@ guessInput2.addEventListener('keyup', function() {
 submitButton.addEventListener('click', function(e) {
   e.preventDefault();
   submitTimeout();
-  challenger1.innerHTML = nameInput1.value;
-  challenger2.innerHTML = nameInput2.value;
+  challenger1.innerHTML = nameInput1.value.toUpperCase();
+  challenger2.innerHTML = nameInput2.value.toUpperCase();
   currentGuess1.innerHTML = guessInput1.value;
   currentGuess2.innerHTML = guessInput2.value;
   submitButton.disabled = true;
