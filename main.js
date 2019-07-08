@@ -3,7 +3,6 @@ var setRangeLow = document.querySelector('#range__lower--num');
 var setRangeHigh = document.querySelector('#range__higher--num');
 var minRangeInput = document.querySelector('#range__input--min');
 var maxRangeInput = document.querySelector('#range__input--max');
-
 var nameInput1 = document.querySelector('#challenge__input--name1');
 var nameInput2 = document.querySelector('#challenge__input--name2');
 var guessInput1 = document.querySelector('#challenge__input--guess1');
@@ -18,8 +17,6 @@ var resetGameBtn = document.querySelector('.btn__reset-game');
 var scoresStanding1 = document.querySelector('#scores__standing--player1');
 var scoresStanding2 = document.querySelector('#scores__standing--player2');
 var cardSection = document.querySelector('.main__section--right');
-// var winningCard = document.querySelector('.article__card')
-
 
 // EVENT LISTENERS
 // clear game button functionality
@@ -125,12 +122,6 @@ submitButton.addEventListener('click', function(e) {
   }
 });
 
-function submitTimeout() {
-  setTimeout(guessFeedbackOne, 100);
-  setTimeout(guessFeedbackTwo, 100);
-}
-
-
 // UPDATE BUTTON FUNCTIONALITY //
 updateBtn.addEventListener('click', function(e) {
     e.preventDefault();
@@ -226,7 +217,6 @@ function stayInRange() {
    }
  }
 
-
  function resetInputs() {
    nameInput1.value = "";
    nameInput2.value = "";
@@ -243,4 +233,9 @@ function stayInRange() {
    currentGuess2.innerHTML = "?";
    scoresStanding1.innerHTML ="your standing";
    scoresStanding2.innerHTML ="your standing";
+ }
+
+ function submitTimeout() {
+   setTimeout(guessFeedbackOne, 100);
+   setTimeout(guessFeedbackTwo, 100);
  }
