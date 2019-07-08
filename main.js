@@ -49,8 +49,6 @@ guessInput2.addEventListener('keyup', function() {
 
 clearGameBtn.addEventListener('click', function(e) {
   e.preventDefault();
-  nameInput1.value = "";
-  nameInput2.value = "";
   guessInput1.value = "";
   guessInput2.value = "";
   clearGameBtn.disabled = true;
