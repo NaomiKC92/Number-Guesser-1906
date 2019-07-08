@@ -17,6 +17,10 @@ var resetGameBtn = document.querySelector('.btn__reset-game');
 var scoresStanding1 = document.querySelector('#scores__standing--player1');
 var scoresStanding2 = document.querySelector('#scores__standing--player2');
 var cardSection = document.querySelector('.main__section--right');
+var defaultMin = 1;
+var defaultMax = 100;
+
+generateRandomNum(defaultMin, defaultMax);
 
 // EVENT LISTENERS
 // clear game button functionality
@@ -126,7 +130,7 @@ submitButton.addEventListener('click', function(e) {
 updateBtn.addEventListener('click', function(e) {
     e.preventDefault();
     updateRange();
-    generateRandomNum();
+    setCustomRange();
 });
 
 
@@ -140,13 +144,17 @@ function updateRange() {
     maxRangeInput.value = "";
    }
 
-function generateRandomNum() {
-    minRangeInput = document.querySelector('#range__input--min').value;
-    maxRangeInput = document.querySelector('#range__input--max').value;
-    randNum = Math.floor(Math.random() * (parseInt(maxRangeInput) - parseInt(minRangeInput)) + parseInt(minRangeInput));
+function generateRandomNum(min, max) {
+    randNum = Math.floor(Math.random() * (max - min) + min);
     console.log(randNum);
     return randNum;
-   }
+   }; 
+
+function setCustomRange(min, max) {
+    defaultMin = minRangeInput;
+    defaultMax = maxRangeInput;
+    generateRandomNum(parseInt(defaultMin), parseInt(defaultMax));
+  };
 
 function stayInRange() {
     var valid = true;
