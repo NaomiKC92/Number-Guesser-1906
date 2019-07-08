@@ -217,6 +217,21 @@ button:enabled:hover {
   cursor: pointer;
 }
 
+figure {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.challenge__input--img {
+  height: 15px;
+  padding-right: 3px;
+}
+
+figcaption {
+  color: #dd1972;
+  font-size: 15px;
+}
 
 .article__scores {
   background-color: #fff;
