@@ -49,8 +49,6 @@ guessInput2.addEventListener('keyup', function() {
 
 clearGameBtn.addEventListener('click', function(e) {
   e.preventDefault();
-  nameInput1.value = "";
-  nameInput2.value = "";
   guessInput1.value = "";
   guessInput2.value = "";
   clearGameBtn.disabled = true;
@@ -181,7 +179,7 @@ function stayInRange() {
      scoresStanding1.innerHTML = "that's too high";
    } else {
      scoresStanding1.innerHTML = "BOOM!";
-     cardSection.insertAdjacentHTML("afterbegin", 
+     cardSection.insertAdjacentHTML("afterbegin",
         `<article class="article__card">
           <article class="article__card--header">
             <h4>${challenger1.innerHTML}</h4>
@@ -208,7 +206,7 @@ function stayInRange() {
      scoresStanding2.innerHTML = "that's too high";
    } else {
      scoresStanding2.innerHTML = "BOOM!";
-     cardSection.insertAdjacentHTML("afterbegin", 
+     cardSection.insertAdjacentHTML("afterbegin",
         `<article class="article__card">
           <article class="article__card--header">
             <h4>${challenger1.innerHTML}</h4>
@@ -246,4 +244,3 @@ function stayInRange() {
    scoresStanding1.innerHTML ="your standing";
    scoresStanding2.innerHTML ="your standing";
  }
-

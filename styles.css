@@ -212,6 +212,11 @@ button:disabled {
   background-color: #d0d2d3;
 }
 
+button:enabled:hover {
+  background-color: #dd1972;
+  cursor: pointer;
+}
+
 
 .article__scores {
   background-color: #fff;
