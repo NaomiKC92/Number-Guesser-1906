@@ -120,8 +120,9 @@ submitButton.addEventListener('click', function(e) {
   submitTimeout();
   challenger1.innerHTML = nameInput1.value.toUpperCase();
   challenger2.innerHTML = nameInput2.value.toUpperCase();
-  currentGuess1.innerHTML = guessInput1.value;
-  currentGuess2.innerHTML = guessInput2.value;
+  currentGuess1.innerHTML = parseInt(guessInput1.value);
+  currentGuess2.innerHTML = parseInt(guessInput2.value);
+  console.log(typeof(guessInput2.value))
   submitButton.disabled = true;
   }
 });
@@ -136,8 +137,9 @@ updateBtn.addEventListener('click', function(e) {
 
 // FUNCTIONS //
 function updateRange() {
-    minRangeInput = document.querySelector('#range__input--min').value;
-    maxRangeInput = document.querySelector('#range__input--max').value;
+    minRangeInput = parseInt(document.querySelector('#range__input--min').value);
+    maxRangeInput = parseInt(document.querySelector('#range__input--max').value);
+    console.log(typeof(maxRangeInput))
     setRangeLow.innerHTML = minRangeInput;
     minRangeInput.value = "";
     setRangeHigh.innerHTML = maxRangeInput;
@@ -148,7 +150,7 @@ function generateRandomNum(min, max) {
     randNum = Math.floor(Math.random() * (max - min) + min);
     console.log(randNum);
     return randNum;
-   }; 
+   };
 
 function setCustomRange(min, max) {
     defaultMin = minRangeInput;
@@ -158,12 +160,12 @@ function setCustomRange(min, max) {
 
 function stayInRange() {
     var valid = true;
-    if (guessInput1.value < setRangeLow.innerHTML || guessInput1.value > setRangeHigh.innerHTML) {
+    if (parseInt(guessInput1.value) < parseInt(setRangeLow.innerHTML) || parseInt(guessInput1.value) > parseInt(setRangeHigh.innerHTML)) {
         valid = false;
         alert("Player 1 guess is out of range, try again")
     };
 
-    if (guessInput2.value < setRangeLow.innerHTML || guessInput2.value > setRangeHigh.innerHTML) {
+    if (parseInt(guessInput2.value) < parseInt(setRangeLow.innerHTML) || parseInt(guessInput2.value) > parseInt(setRangeHigh.innerHTML)) {
         valid = false;
         alert("Player 2 guess is out of range, try again")
     };
