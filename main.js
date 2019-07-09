@@ -122,7 +122,6 @@ submitButton.addEventListener('click', function(e) {
   challenger2.innerHTML = nameInput2.value.toUpperCase();
   currentGuess1.innerHTML = parseInt(guessInput1.value);
   currentGuess2.innerHTML = parseInt(guessInput2.value);
-  console.log(typeof(guessInput2.value))
   submitButton.disabled = true;
   }
 });
@@ -149,7 +148,7 @@ function updateRange() {
 function generateRandomNum(min, max) {
     randNum = Math.floor(Math.random() * (max - min) + min);
     console.log(randNum);
-    return randNum;
+    return parseInt(randNum);
    };
 
 function setCustomRange(min, max) {
@@ -174,7 +173,9 @@ function stayInRange() {
 
 
  function guessFeedbackOne() {
-   if (guessInput1.value < randNum) {
+   if (parseInt(guessInput1.value) < randNum) {
+     console.log(typeof(guessInput1.value))
+     console.log(typeof(randNum))
      scoresStanding1.innerHTML = "that's too low";
    } else if (guessInput1.value > randNum) {
      scoresStanding1.innerHTML = "that's too high";
@@ -201,7 +202,7 @@ function stayInRange() {
  }
 
  function guessFeedbackTwo() {
-   if (guessInput2.value < randNum) {
+   if (parseInt(guessInput2.value) < randNum) {
      scoresStanding2.innerHTML = "that's too low";
    } else if (guessInput2.value > randNum) {
      scoresStanding2.innerHTML = "that's too high";
