@@ -31,17 +31,14 @@ var emptyName1 = document.querySelector('.error__name1-empty');
 var emptyNameMsg1 = document.querySelector('.error__name1-empty-msg');
 var emptyName2 = document.querySelector('.error__name2-empty');
 var emptyNameMsg2 = document.querySelector('.error__name2-empty-msg');
-
 var rangeInputError1= document.querySelector('.error__set--range1');
 var rangeInputErrorMsg1 = document.querySelector('.error__set--range-msg1');
-
 var rangeInputError2= document.querySelector('.error__set--range2');
 var rangeInputErrorMsg2 = document.querySelector('.error__set--range-msg2');
 
 generateRandomNum(defaultMin, defaultMax);
 
 // EVENT LISTENERS
-
 guessInput1.addEventListener('keyup', enableClearBtn)
 
 guessInput2.addEventListener('keyup', enableClearBtn)
@@ -73,7 +70,6 @@ nameInput2.addEventListener('keyup', enableReset)
 guessInput1.addEventListener('keyup', enableReset)
 
 guessInput2.addEventListener('keyup', enableReset)
-
 
 resetGameBtn.addEventListener('click', function(e) {
   e.preventDefault();
@@ -139,15 +135,14 @@ updateBtn.addEventListener('click', function(e) {
 function updateRange() {
     minRangeInput = parseInt(document.querySelector('#range__input--min').value);
     maxRangeInput = parseInt(document.querySelector('#range__input--max').value);
-    setRangeLow.innerHTML = minRangeInput;
+    setRangeLow.innerHTML = minRangeInput || 1;
     minRangeInput.value = "";
-    setRangeHigh.innerHTML = maxRangeInput;
+    setRangeHigh.innerHTML = maxRangeInput || 100;
     maxRangeInput.value = "";
    }
 
 function generateRandomNum(min, max) {
     randNum = Math.floor(Math.random() * (max - min) + min);
-    console.log(randNum);
     return randNum;
    };
 
@@ -262,6 +257,9 @@ function writeInName() {
             <img src="images/close_btn.png" class="article__card--img">
           </article>
         </article>`)
+        parseInt(setRangeLow.value) - 10;
+        parseInt(setRangeHigh.value) + 10;
+        generateRandomNum();
    }
  }
 
@@ -289,6 +287,9 @@ function writeInName() {
             <img src="images/close_btn.png" class="article__card--img">
           </article>
         </article>`)
+        parseInt(setRangeLow.value) - 10;
+        parseInt(setRangeHigh.value) + 10;
+        generateRandomNum();
    }
  }
 
@@ -306,8 +307,10 @@ function writeInName() {
    challenger2.innerHTML = "Challenger Name 2";
    currentGuess1.innerHTML = "?";
    currentGuess2.innerHTML = "?";
-   scoresStanding1.innerHTML ="your standing";
-   scoresStanding2.innerHTML ="your standing";
+   scoresStanding1.innerHTML = "your standing";
+   scoresStanding2.innerHTML = "your standing";
+   setRangeLow.innerHTML = 1;
+   setRangeHigh.innerHTML = 100;
  }
 
  function submitTimeout() {
