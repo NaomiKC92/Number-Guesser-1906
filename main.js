@@ -50,6 +50,18 @@ clearGameBtn.addEventListener('click', function(e) {
   e.preventDefault();
   guessInput1.value = "";
   guessInput2.value = "";
+  emptyName1.hidden = true;
+  emptyNameMsg1.hidden = true;
+  nameInput1.classList.remove('input__error--border');
+  emptyName2.hidden = true;
+  emptyNameMsg2.hidden = true;
+  nameInput2.classList.remove('input__error--border');
+  rangeError1.hidden = true;
+  rangeErrorMsg1.hidden = true;
+  guessInput1.classList.remove('input__error--border');
+  rangeError2.hidden = true;
+  rangeErrorMsg2.hidden = true;
+  guessInput2.classList.remove('input__error--border');
   clearGameBtn.disabled = true;
 });
 
@@ -68,6 +80,18 @@ resetGameBtn.addEventListener('click', function(e) {
   generateRandomNum(1, 100);
   resetInputs();
   resetInnerHTML();
+  emptyName1.hidden = true;
+  emptyNameMsg1.hidden = true;
+  nameInput1.classList.remove('input__error--border');
+  emptyName2.hidden = true;
+  emptyNameMsg2.hidden = true;
+  nameInput2.classList.remove('input__error--border');
+  rangeError1.hidden = true;
+  rangeErrorMsg1.hidden = true;
+  guessInput1.classList.remove('input__error--border');
+  rangeError2.hidden = true;
+  rangeErrorMsg2.hidden = true;
+  guessInput2.classList.remove('input__error--border');
   clearGameBtn.disabled = true;
   submitButton.disabled = true;
 });
@@ -163,7 +187,6 @@ function stayInRange() {
     return valid;
 };
 
-
 function displayRangeError() {
   var valid = true;
   if (minRangeInput.value > maxRangeInput.value || maxRangeInput.value < minRangeInput.value) {
@@ -187,17 +210,6 @@ function displayRangeError() {
   }
   return valid
 };
-
-// function removeRangeError() {
-//   if (minRangeInput.value < maxRangeInput.value || maxRangeInput.value > minRangeInput.value) {
-//     maxRangeInput.classList.remove('input__error--border')
-//     minRangeInput.classList.remove('input__error--border')
-//     rangeInputError1.hidden = true;
-//     rangeInputErrorMsg1.hidden = true;
-//     rangeInputError2.hidden = true;
-//     rangeInputErrorMsg2.hidden = true;
-//   };
-// };
 
 function writeInName() {
   var valid = true;
