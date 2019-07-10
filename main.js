@@ -112,12 +112,6 @@ updateBtn.addEventListener('click', function(e) {
 
 
 // FUNCTIONS //
-function enableUpdateBtn() {
-  if (minRangeInput.value !== "" && maxRangeInput.value !== "") {
-      updateBtn.disabled = false;
-  }
-}
-
 function updateRange() {
     minRangeInput = parseInt(document.querySelector('#range__input--min').value);
     maxRangeInput = parseInt(document.querySelector('#range__input--max').value);
@@ -185,6 +179,7 @@ function displayRangeError() {
   if (valid === true) {
     maxRangeInput.classList.remove('input__error--border');
     minRangeInput.classList.remove('input__error--border');
+    updateBtn.classList.remove('btn__margin');
     rangeInputError1.hidden = true;
     rangeInputErrorMsg1.hidden = true;
     rangeInputError2.hidden = true;
@@ -308,20 +303,34 @@ function writeInName() {
    setTimeout(guessFeedbackTwo, 100);
  }
 
+ function enableUpdateBtn() {
+   if (minRangeInput.value !== "" && maxRangeInput.value !== "") {
+       updateBtn.disabled = false;
+   } else {
+   updateBtn.disabled = true;
+  }
+};
+
  function enableClearBtn() {
   if (guessInput1.value !== "" || guessInput1.value !== ""  ) {
     clearGameBtn.disabled = false;
-  }
+  } else {
+  clearGameBtn.disabled = true;
+ }
 };
 
 function enableReset() {
   if (nameInput1.value !== "" || nameInput2.value !== "" || guessInput1.value !== "" || guessInput2.value !== "") {
     resetGameBtn.disabled = false;
-  }
+  } else {
+  resetGameBtn.disabled = true;
+ }
 };
 
 function enableSubmit() {
   if (nameInput1.value !== "" || nameInput2.value !== "" || guessInput1.value !== "" || guessInput2.value !== "") {
     submitButton.disabled = false;
-  }
-}
+  } else {
+  submitButton.disabled = true;
+ }
+};
