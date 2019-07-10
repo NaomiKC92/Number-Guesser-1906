@@ -143,6 +143,7 @@ function updateRange() {
 
 function generateRandomNum(min, max) {
     randNum = Math.floor(Math.random() * (max - min) + min);
+    console.log(randNum);
     return randNum;
    };
 
@@ -270,6 +271,7 @@ function writeInName() {
      scoresStanding2.innerHTML = "that's too high";
    } else {
      scoresStanding2.innerHTML = "BOOM!";
+     addTen();
      cardSection.insertAdjacentHTML("afterbegin",
         `<article class="article__card">
           <article class="article__card--header">
@@ -287,11 +289,19 @@ function writeInName() {
             <img src="images/close_btn.png" class="article__card--img">
           </article>
         </article>`)
-        parseInt(setRangeLow.value) - 10;
-        parseInt(setRangeHigh.value) + 10;
-        generateRandomNum();
    }
  }
+
+ function addTen() {
+   // setRangeLow.innerHTML = setRangeLow.innerHTML-- * 10;
+   // console.log(setRangeLow.innerHTML--);
+   console.log(setRangeLow.innerHTML = (setRangeLow.innerHTML--) - 10);
+   // setRangeHigh.innerHTML = setRangeHigh.innerHTML++ * 10;
+   // console.log(setRangeHigh.innerHTML++);
+   console.log(setRangeHigh.innerHTML = (setRangeHigh.innerHTML++) + 10);
+   // generateRandomNum();
+ }
+
 
  function resetInputs() {
    nameInput1.value = "";
