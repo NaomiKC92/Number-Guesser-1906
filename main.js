@@ -32,16 +32,11 @@ var emptyNameMsg1 = document.querySelector('.error__name1-empty-msg');
 var emptyName2 = document.querySelector('.error__name2-empty');
 var emptyNameMsg2 = document.querySelector('.error__name2-empty-msg');
 
-
 var rangeInputError1= document.querySelector('.error__set--range1');
 var rangeInputErrorMsg1 = document.querySelector('.error__set--range-msg1');
 
-
 var rangeInputError2= document.querySelector('.error__set--range2');
 var rangeInputErrorMsg2 = document.querySelector('.error__set--range-msg2');
-
-
-
 
 generateRandomNum(defaultMin, defaultMax);
 
@@ -84,8 +79,7 @@ nameInput2.addEventListener('keyup', enableSubmit)
 
 guessInput1.addEventListener('keyup', enableSubmit)
 
-guessInput2.addEventListener('keyup', enableSubmit) 
-
+guessInput2.addEventListener('keyup', enableSubmit)
 
 submitButton.addEventListener('click', function(e) {
   e.preventDefault();
@@ -102,6 +96,9 @@ submitButton.addEventListener('click', function(e) {
 });
 
 // UPDATE BUTTON FUNCTIONALITY //
+minRangeInput.addEventListener('keyup', enableUpdateBtn);
+maxRangeInput.addEventListener('keyup', enableUpdateBtn);
+
 updateBtn.addEventListener('click', function(e) {
     e.preventDefault();
     // debugger;
@@ -115,6 +112,12 @@ updateBtn.addEventListener('click', function(e) {
 
 
 // FUNCTIONS //
+function enableUpdateBtn() {
+  if (minRangeInput.value !== "" && maxRangeInput.value !== "") {
+      updateBtn.disabled = false;
+  }
+}
+
 function updateRange() {
     minRangeInput = parseInt(document.querySelector('#range__input--min').value);
     maxRangeInput = parseInt(document.querySelector('#range__input--max').value);
@@ -201,10 +204,6 @@ function displayRangeError() {
 //   };
 // };
 
-    
-    
-
-  
 function writeInName() {
   var valid = true;
   if (nameInput1.value === "") {
