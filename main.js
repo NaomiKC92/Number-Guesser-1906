@@ -19,6 +19,15 @@ var scoresStanding2 = document.querySelector('#scores__standing--player2');
 var cardSection = document.querySelector('.main__section--right');
 var defaultMin = 1;
 var defaultMax = 100;
+var errorRange = document.querySelector('.input__error--range');
+var errorImg = document.querySelector('.challenge__input--img');
+var rangeError1 = document.querySelector('.error__guess1-range');
+var rangeErrorMsg1 = document.querySelector('.error__guess1-range-msg');
+var rangeError2 = document.querySelector('.error__guess2-range');
+var rangeErrorMsg2 = document.querySelector('.error__guess2-range-msg');
+var emptyGuess1 = document.querySelector('.error__guess1-empty');
+var emptyGuessMsg1 = document.querySelector('.error__guess1-empty-msg');
+
 
 generateRandomNum(defaultMin, defaultMax);
 
@@ -82,7 +91,7 @@ guessInput2.addEventListener('keyup', function() {
 
 resetGameBtn.addEventListener('click', function(e) {
   e.preventDefault();
-  generateRandomNum();
+  generateRandomNum(1, 100);
   resetInputs();
   resetInnerHTML();
   clearGameBtn.disabled = true;
@@ -115,6 +124,7 @@ guessInput2.addEventListener('keyup', function() {
 
 submitButton.addEventListener('click', function(e) {
   e.preventDefault();
+//   enterInputError();
   var validity = stayInRange();
   if (validity === true) {
   submitTimeout();
@@ -148,7 +158,7 @@ function updateRange() {
 function generateRandomNum(min, max) {
     randNum = Math.floor(Math.random() * (max - min) + min);
     console.log(randNum);
-    return parseInt(randNum);
+    return randNum;
    };
 
 function setCustomRange(min, max) {
@@ -159,23 +169,43 @@ function setCustomRange(min, max) {
 
 function stayInRange() {
     var valid = true;
-    if (parseInt(guessInput1.value) < parseInt(setRangeLow.innerHTML) || parseInt(guessInput1.value) > parseInt(setRangeHigh.innerHTML)) {
+    if (guessInput1.value === "" || parseInt(guessInput1.value) < parseInt(setRangeLow.innerHTML) || parseInt(guessInput1.value) > parseInt(setRangeHigh.innerHTML)) {
         valid = false;
-        alert("Player 1 guess is out of range, try again")
+        guessInput1.classList.add('input__error--border');
+        rangeError1.hidden = false;
+        rangeErrorMsg1.hidden = false;
+        // alert("Player 1 guess is out of range, try again")
     };
+    if (valid === true) {
+        rangeError1.hidden = true;
+        rangeErrorMsg1.hidden = true;  
+        guessInput1.classList.remove('input__error--border');
+    }
 
-    if (parseInt(guessInput2.value) < parseInt(setRangeLow.innerHTML) || parseInt(guessInput2.value) > parseInt(setRangeHigh.innerHTML)) {
+    if (guessInput2.value === "" || parseInt(guessInput2.value) < parseInt(setRangeLow.innerHTML) || parseInt(guessInput2.value) > parseInt(setRangeHigh.innerHTML)) {
         valid = false;
-        alert("Player 2 guess is out of range, try again")
+        guessInput2.classList.add('input__error--border')
+        rangeError2.hidden = false;
+        rangeErrorMsg2.hidden = false;
+        // alert("Player 2 guess is out of range, try again")
     };
+    if (valid === true) {
+        rangeError2.hidden = true;
+        rangeErrorMsg2.hidden = true;
+        guessInput2.classList.remove('input__error--border');  
+    }
     return valid;
 }
 
+// function enterInputError() {
+//     if (guessInput1.value === "") {
+//         emptyGuess1.hidden = false;
+//         emptyGuessMsg1.hidden = false;
+//     }
+// }
 
  function guessFeedbackOne() {
    if (parseInt(guessInput1.value) < randNum) {
-     console.log(typeof(guessInput1.value))
-     console.log(typeof(randNum))
      scoresStanding1.innerHTML = "that's too low";
    } else if (guessInput1.value > randNum) {
      scoresStanding1.innerHTML = "that's too high";
@@ -250,3 +280,4 @@ function stayInRange() {
    setTimeout(guessFeedbackOne, 100);
    setTimeout(guessFeedbackTwo, 100);
  }
+

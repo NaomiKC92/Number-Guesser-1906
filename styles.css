@@ -226,11 +226,17 @@ figure {
 .challenge__input--img {
   height: 15px;
   padding-right: 3px;
+  /* display: inline; */
 }
 
 figcaption {
   color: #dd1972;
   font-size: 15px;
+  /* display: inline; */
+}
+
+.input__error--border {
+  border: 2px solid #dd1972;
 }
 
 .article__scores {
