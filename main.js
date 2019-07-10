@@ -31,13 +31,19 @@ var emptyName1 = document.querySelector('.error__name1-empty');
 var emptyNameMsg1 = document.querySelector('.error__name1-empty-msg');
 var emptyName2 = document.querySelector('.error__name2-empty');
 var emptyNameMsg2 = document.querySelector('.error__name2-empty-msg');
-var rangeInputError = document.querySelector('.error__set--range');
-var rangeInputErrorMsg = document.querySelector('.error__set--range-msg');
-var inputsRange = document.querySelectorAll('.range__input')
+
+
+var rangeInputError1= document.querySelector('.error__set--range1');
+var rangeInputErrorMsg1 = document.querySelector('.error__set--range-msg1');
+
+
+var rangeInputError2= document.querySelector('.error__set--range2');
+var rangeInputErrorMsg2 = document.querySelector('.error__set--range-msg2');
+
+
 
 
 generateRandomNum(defaultMin, defaultMax);
-// displayRangeError();
 
 // EVENT LISTENERS
 
@@ -52,7 +58,7 @@ clearGameBtn.addEventListener('click', function(e) {
   clearGameBtn.disabled = true;
 });
 
-// reset button functionality
+// RESET BUTTON FUNCTIONALITY
 nameInput1.addEventListener('keyup', enableReset)
 
 nameInput2.addEventListener('keyup', enableReset)
@@ -71,7 +77,7 @@ resetGameBtn.addEventListener('click', function(e) {
   submitButton.disabled = true;
 });
 
-// submit button functionality
+// SUBMIT BUTTON FUNCTIONALITY
 nameInput1.addEventListener('keyup', enableSubmit)
 
 nameInput2.addEventListener('keyup', enableSubmit)
@@ -98,9 +104,13 @@ submitButton.addEventListener('click', function(e) {
 // UPDATE BUTTON FUNCTIONALITY //
 updateBtn.addEventListener('click', function(e) {
     e.preventDefault();
+    // debugger;
+    var validity = displayRangeError();
+    if (validity === true) {
+    // removeRangeError();
     updateRange();
     setCustomRange();
-    displayRangeError();
+    }
 });
 
 
@@ -158,16 +168,42 @@ function stayInRange() {
 
 
 function displayRangeError() {
-  var inputsRange = document.querySelectorAll('.range__input')
-  debugger;
-  if (minRangeInput > maxRangeInput || maxRangeInput < minRangeInput) {
-    for (var i = 0; i < inputsRange.length; i++ ){
-    inputsRange.classList.add('input__error--border');
-    rangeInputError.hidden = false;
-    rangeInputErrorMsg.hidden = false;
-    }
+  var valid = true;
+  if (minRangeInput.value > maxRangeInput.value || maxRangeInput.value < minRangeInput.value) {
+    valid = false;
+    maxRangeInput.classList.add('input__error--border');
+    minRangeInput.classList.add('input__error--border');
+    updateBtn.classList.add('btn__margin');
+    rangeInputError1.hidden = false;
+    rangeInputErrorMsg1.hidden = false;
+    rangeInputError2.hidden = false;
+    rangeInputErrorMsg2.hidden = false;
+  };
+  if (valid === true) {
+    maxRangeInput.classList.remove('input__error--border');
+    minRangeInput.classList.remove('input__error--border');
+    rangeInputError1.hidden = true;
+    rangeInputErrorMsg1.hidden = true;
+    rangeInputError2.hidden = true;
+    rangeInputErrorMsg2.hidden = true;
   }
+  return valid
 };
+
+// function removeRangeError() {
+//   if (minRangeInput.value < maxRangeInput.value || maxRangeInput.value > minRangeInput.value) {
+//     maxRangeInput.classList.remove('input__error--border')
+//     minRangeInput.classList.remove('input__error--border')
+//     rangeInputError1.hidden = true;
+//     rangeInputErrorMsg1.hidden = true;
+//     rangeInputError2.hidden = true;
+//     rangeInputErrorMsg2.hidden = true;
+//   };
+// };
+
+    
+    
+
   
 function writeInName() {
   var valid = true;
