@@ -31,13 +31,18 @@ var emptyName1 = document.querySelector('.error__name1-empty');
 var emptyNameMsg1 = document.querySelector('.error__name1-empty-msg');
 var emptyName2 = document.querySelector('.error__name2-empty');
 var emptyNameMsg2 = document.querySelector('.error__name2-empty-msg');
-var rangeInputError = document.querySelector('.error__set--range');
-var rangeInputErrorMsg = document.querySelector('.error__set--range-msg');
-var inputsRange = document.querySelectorAll('.range__input')
+
+
+var rangeInputError1= document.querySelector('.error__set--range1');
+var rangeInputErrorMsg1 = document.querySelector('.error__set--range-msg1');
+
+
+var rangeInputError2= document.querySelector('.error__set--range2');
+var rangeInputErrorMsg2 = document.querySelector('.error__set--range-msg2');
+
 
 
 generateRandomNum(defaultMin, defaultMax);
-// displayRangeError();
 
 // EVENT LISTENERS
 
@@ -52,7 +57,7 @@ clearGameBtn.addEventListener('click', function(e) {
   clearGameBtn.disabled = true;
 });
 
-// reset button functionality
+// RESET BUTTON FUNCTIONALITY
 nameInput1.addEventListener('keyup', enableReset)
 
 nameInput2.addEventListener('keyup', enableReset)
@@ -71,7 +76,7 @@ resetGameBtn.addEventListener('click', function(e) {
   submitButton.disabled = true;
 });
 
-// submit button functionality
+// SUBMIT BUTTON FUNCTIONALITY
 nameInput1.addEventListener('keyup', enableSubmit)
 
 nameInput2.addEventListener('keyup', enableSubmit)
@@ -98,9 +103,10 @@ submitButton.addEventListener('click', function(e) {
 // UPDATE BUTTON FUNCTIONALITY //
 updateBtn.addEventListener('click', function(e) {
     e.preventDefault();
+    displayRangeErrorOne();
+    displayRangeErrorTwo();
     updateRange();
     setCustomRange();
-    displayRangeError();
 });
 
 
@@ -157,17 +163,36 @@ function stayInRange() {
 };
 
 
-function displayRangeError() {
-  var inputsRange = document.querySelectorAll('.range__input')
-  debugger;
-  if (minRangeInput > maxRangeInput || maxRangeInput < minRangeInput) {
-    for (var i = 0; i < inputsRange.length; i++ ){
-    inputsRange.classList.add('input__error--border');
-    rangeInputError.hidden = false;
-    rangeInputErrorMsg.hidden = false;
-    }
-  }
+// var rangeInputError1= document.querySelector('.error__set--range1');
+// var rangeInputErrorMsg1 = document.querySelector('.error__set--range-msg2');
+
+
+// var rangeInputError2= document.querySelector('.error__set--range2');
+// var rangeInputErrorMsg2 = document.querySelector('.error__set--range-msg2');
+
+
+function displayRangeErrorOne() {
+  var minRangeInput = document.querySelector('.range__input--min');
+  if (minRangeInput.value > maxRangeInput.value) {
+    minRangeInput.classList.add('input__error--border')
+    rangeInputError1.hidden = false;
+    rangeInputErrorMsg1.hidden = false;
+  };
 };
+
+function displayRangeErrorTwo() {
+  var maxRangeInput = document.querySelector('.range__input--max');
+  if (maxRangeInput.value < minRangeInput.value) {
+    maxRangeInput.classList.add('input__error--border')
+    rangeInputError2.hidden = false;
+    rangeInputErrorMsg2.hidden = false;
+  };
+};
+
+
+    
+    
+
   
 function writeInName() {
   var valid = true;
