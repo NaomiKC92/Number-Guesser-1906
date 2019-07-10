@@ -239,6 +239,10 @@ figcaption {
   border: 2px solid #dd1972;
 }
 
+.btn__margin {
+  margin-bottom: 20px;
+}
+
 .article__scores {
   background-color: #fff;
   border: 2px solid #d0d2d3;
@@ -465,8 +469,12 @@ h5 {
     height: 30px;
   }
 
+  .input__error--border {
+    border: 2px solid #dd1972;
+  }
+
   .article__btns {
-    margin-top: 17px;
+    margin-top: 30px;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -637,8 +645,12 @@ h5 {
     height: 30px;
   }
 
+  .input__error--border {
+    border: 2px solid #dd1972;
+  }
+
   .article__btns {
-    margin-top: 17px;
+    margin-top: 30px;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -818,8 +830,12 @@ h5 {
     height: 30px;
   }
 
+  .input__error--border {
+    border: 2px solid #dd1972;
+  }
+
   .article__btns {
-    margin-top: 17px;
+    margin-top: 30px;
     flex-direction: column;
     align-items: center;
     width: 100%;

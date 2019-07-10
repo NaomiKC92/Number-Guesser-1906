@@ -42,6 +42,7 @@ var rangeInputErrorMsg2 = document.querySelector('.error__set--range-msg2');
 
 
 
+
 generateRandomNum(defaultMin, defaultMax);
 
 // EVENT LISTENERS
@@ -103,10 +104,13 @@ submitButton.addEventListener('click', function(e) {
 // UPDATE BUTTON FUNCTIONALITY //
 updateBtn.addEventListener('click', function(e) {
     e.preventDefault();
-    displayRangeErrorOne();
-    displayRangeErrorTwo();
+    // debugger;
+    var validity = displayRangeError();
+    if (validity === true) {
+    // removeRangeError();
     updateRange();
     setCustomRange();
+    }
 });
 
 
@@ -163,32 +167,39 @@ function stayInRange() {
 };
 
 
-// var rangeInputError1= document.querySelector('.error__set--range1');
-// var rangeInputErrorMsg1 = document.querySelector('.error__set--range-msg2');
-
-
-// var rangeInputError2= document.querySelector('.error__set--range2');
-// var rangeInputErrorMsg2 = document.querySelector('.error__set--range-msg2');
-
-
-function displayRangeErrorOne() {
-  var minRangeInput = document.querySelector('.range__input--min');
-  if (minRangeInput.value > maxRangeInput.value) {
-    minRangeInput.classList.add('input__error--border')
+function displayRangeError() {
+  var valid = true;
+  if (minRangeInput.value > maxRangeInput.value || maxRangeInput.value < minRangeInput.value) {
+    valid = false;
+    maxRangeInput.classList.add('input__error--border');
+    minRangeInput.classList.add('input__error--border');
+    updateBtn.classList.add('btn__margin');
     rangeInputError1.hidden = false;
     rangeInputErrorMsg1.hidden = false;
-  };
-};
-
-function displayRangeErrorTwo() {
-  var maxRangeInput = document.querySelector('.range__input--max');
-  if (maxRangeInput.value < minRangeInput.value) {
-    maxRangeInput.classList.add('input__error--border')
     rangeInputError2.hidden = false;
     rangeInputErrorMsg2.hidden = false;
   };
+  if (valid === true) {
+    maxRangeInput.classList.remove('input__error--border');
+    minRangeInput.classList.remove('input__error--border');
+    rangeInputError1.hidden = true;
+    rangeInputErrorMsg1.hidden = true;
+    rangeInputError2.hidden = true;
+    rangeInputErrorMsg2.hidden = true;
+  }
+  return valid
 };
 
+// function removeRangeError() {
+//   if (minRangeInput.value < maxRangeInput.value || maxRangeInput.value > minRangeInput.value) {
+//     maxRangeInput.classList.remove('input__error--border')
+//     minRangeInput.classList.remove('input__error--border')
+//     rangeInputError1.hidden = true;
+//     rangeInputErrorMsg1.hidden = true;
+//     rangeInputError2.hidden = true;
+//     rangeInputErrorMsg2.hidden = true;
+//   };
+// };
 
     
     
