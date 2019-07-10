@@ -27,6 +27,10 @@ var rangeError2 = document.querySelector('.error__guess2-range');
 var rangeErrorMsg2 = document.querySelector('.error__guess2-range-msg');
 var emptyGuess1 = document.querySelector('.error__guess1-empty');
 var emptyGuessMsg1 = document.querySelector('.error__guess1-empty-msg');
+var emptyName1 = document.querySelector('.error__name1-empty')
+var emptyNameMsg1 = document.querySelector('.error__name1-empty-msg')
+var emptyName2 = document.querySelector('.error__name2-empty')
+var emptyNameMsg2 = document.querySelector('.error__name2-empty-msg')
 
 
 generateRandomNum(defaultMin, defaultMax);
@@ -126,7 +130,8 @@ submitButton.addEventListener('click', function(e) {
   e.preventDefault();
 //   enterInputError();
   var validity = stayInRange();
-  if (validity === true) {
+  var nameValidity = writeInName();
+  if (validity === true && nameValidity === true) {
   submitTimeout();
   challenger1.innerHTML = nameInput1.value.toUpperCase();
   challenger2.innerHTML = nameInput2.value.toUpperCase();
@@ -178,7 +183,7 @@ function stayInRange() {
     };
     if (valid === true) {
         rangeError1.hidden = true;
-        rangeErrorMsg1.hidden = true;  
+        rangeErrorMsg1.hidden = true;
         guessInput1.classList.remove('input__error--border');
     }
 
@@ -192,9 +197,36 @@ function stayInRange() {
     if (valid === true) {
         rangeError2.hidden = true;
         rangeErrorMsg2.hidden = true;
-        guessInput2.classList.remove('input__error--border');  
+        guessInput2.classList.remove('input__error--border');
     }
     return valid;
+}
+
+function writeInName() {
+  var valid = true;
+  if (nameInput1.value === "") {
+    emptyName1.hidden = false;
+    emptyNameMsg1.hidden = false;
+    nameInput1.classList.add('input__error--border');
+    valid = false;
+  }
+  if (valid === true) {
+    emptyName1.hidden = true;
+    emptyNameMsg1.hidden = true;
+    nameInput1.classList.remove('input__error--border');
+  }
+  if (nameInput2.value === "") {
+    emptyName2.hidden = false;
+    emptyNameMsg2.hidden = false;
+    nameInput2.classList.add('input__error--border');
+    valid = false;
+  }
+  if (valid === true) {
+    emptyName2.hidden = true;
+    emptyNameMsg2.hidden = true;
+    nameInput2.classList.remove('input__error--border');
+  }
+  return valid;
 }
 
 // function enterInputError() {
@@ -280,4 +312,3 @@ function stayInRange() {
    setTimeout(guessFeedbackOne, 100);
    setTimeout(guessFeedbackTwo, 100);
  }
-
