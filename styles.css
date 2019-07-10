@@ -217,23 +217,22 @@ button:enabled:hover {
   cursor: pointer;
 }
 
-/* figure {
+figure {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: magenta;
-} */
+}
 
 .challenge__input--img {
   height: 15px;
   padding-right: 3px;
-  display: inline;
+  /* display: inline; */
 }
 
 figcaption {
   color: #dd1972;
   font-size: 15px;
-  display: inline;
+  /* display: inline; */
 }
 
 .input__error--border {
