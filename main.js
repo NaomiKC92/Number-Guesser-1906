@@ -32,16 +32,11 @@ var emptyNameMsg1 = document.querySelector('.error__name1-empty-msg');
 var emptyName2 = document.querySelector('.error__name2-empty');
 var emptyNameMsg2 = document.querySelector('.error__name2-empty-msg');
 
-
 var rangeInputError1= document.querySelector('.error__set--range1');
 var rangeInputErrorMsg1 = document.querySelector('.error__set--range-msg1');
 
-
 var rangeInputError2= document.querySelector('.error__set--range2');
 var rangeInputErrorMsg2 = document.querySelector('.error__set--range-msg2');
-
-
-
 
 generateRandomNum(defaultMin, defaultMax);
 
@@ -84,8 +79,7 @@ nameInput2.addEventListener('keyup', enableSubmit)
 
 guessInput1.addEventListener('keyup', enableSubmit)
 
-guessInput2.addEventListener('keyup', enableSubmit) 
-
+guessInput2.addEventListener('keyup', enableSubmit)
 
 submitButton.addEventListener('click', function(e) {
   e.preventDefault();
@@ -102,6 +96,9 @@ submitButton.addEventListener('click', function(e) {
 });
 
 // UPDATE BUTTON FUNCTIONALITY //
+minRangeInput.addEventListener('keyup', enableUpdateBtn);
+maxRangeInput.addEventListener('keyup', enableUpdateBtn);
+
 updateBtn.addEventListener('click', function(e) {
     e.preventDefault();
     // debugger;
@@ -182,6 +179,7 @@ function displayRangeError() {
   if (valid === true) {
     maxRangeInput.classList.remove('input__error--border');
     minRangeInput.classList.remove('input__error--border');
+    updateBtn.classList.remove('btn__margin');
     rangeInputError1.hidden = true;
     rangeInputErrorMsg1.hidden = true;
     rangeInputError2.hidden = true;
@@ -201,10 +199,6 @@ function displayRangeError() {
 //   };
 // };
 
-    
-    
-
-  
 function writeInName() {
   var valid = true;
   if (nameInput1.value === "") {
@@ -309,20 +303,34 @@ function writeInName() {
    setTimeout(guessFeedbackTwo, 100);
  }
 
+ function enableUpdateBtn() {
+   if (minRangeInput.value !== "" && maxRangeInput.value !== "") {
+       updateBtn.disabled = false;
+   } else {
+   updateBtn.disabled = true;
+  }
+};
+
  function enableClearBtn() {
   if (guessInput1.value !== "" || guessInput1.value !== ""  ) {
     clearGameBtn.disabled = false;
-  }
+  } else {
+  clearGameBtn.disabled = true;
+ }
 };
 
 function enableReset() {
   if (nameInput1.value !== "" || nameInput2.value !== "" || guessInput1.value !== "" || guessInput2.value !== "") {
     resetGameBtn.disabled = false;
-  }
+  } else {
+  resetGameBtn.disabled = true;
+ }
 };
 
 function enableSubmit() {
   if (nameInput1.value !== "" || nameInput2.value !== "" || guessInput1.value !== "" || guessInput2.value !== "") {
     submitButton.disabled = false;
-  }
-}
+  } else {
+  submitButton.disabled = true;
+ }
+};

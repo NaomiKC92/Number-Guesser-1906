@@ -130,8 +130,8 @@ h3 {
   font-weight: 700;
   font-size: 100%;
   height: 40px;
-  outline: none;
   width: 23%;
+  outline: none;
 }
 
 .article__challenge {
@@ -209,6 +209,10 @@ button {
 }
 
 button:disabled {
+  background-color: #d0d2d3;
+}
+
+.range__btn--update:disabled {
   background-color: #d0d2d3;
 }
 
@@ -413,7 +417,7 @@ h5 {
   }
 
   .article__range {
-    height: 230px;
+    height: 238px;
     padding: 10px;
     margin: 11px auto;
   }
@@ -422,6 +426,14 @@ h5 {
     align-self: flex-start;
     height: 34px;
     width: 37%;
+    margin-top: 5px;
+  }
+
+  .range__btn--update:disabled {
+    background-color: #d0d2d3;
+    height: 34px;
+    width: 37%;
+    margin-top: 5px;
   }
 
   .article__challenge {
@@ -590,7 +602,7 @@ h5 {
   }
 
   .article__range {
-    height: 230px;
+    height: 246px;
     padding: 10px;
     margin: 11px auto;
   }
@@ -599,6 +611,14 @@ h5 {
     align-self: flex-start;
     height: 34px;
     width: 37%;
+    margin-top: 5px;
+  }
+
+  .range__btn--update:disabled {
+    background-color: #d0d2d3;
+    height: 34px;
+    width: 37%;
+    margin-top: 5px;
   }
 
   .article__challenge {
@@ -774,7 +794,7 @@ h5 {
   }
 
   .article__range {
-    height: 230px;
+    height: 240px;
     padding: 10px;
     margin: 11px auto;
   }
@@ -783,6 +803,7 @@ h5 {
     align-self: flex-start;
     height: 34px;
     width: 37%;
+    margin-top: 5px;
   }
 
   .article__challenge {
