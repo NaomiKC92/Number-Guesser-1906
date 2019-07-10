@@ -176,6 +176,11 @@ function stayInRange() {
         rangeErrorMsg1.hidden = false;
         // alert("Player 1 guess is out of range, try again")
     };
+    if (valid === true) {
+        rangeError1.hidden = true;
+        rangeErrorMsg1.hidden = true;  
+        guessInput1.classList.remove('input__error--border');
+    }
 
     if (guessInput2.value === "" || parseInt(guessInput2.value) < parseInt(setRangeLow.innerHTML) || parseInt(guessInput2.value) > parseInt(setRangeHigh.innerHTML)) {
         valid = false;
@@ -184,6 +189,11 @@ function stayInRange() {
         rangeErrorMsg2.hidden = false;
         // alert("Player 2 guess is out of range, try again")
     };
+    if (valid === true) {
+        rangeError2.hidden = true;
+        rangeErrorMsg2.hidden = true;
+        guessInput2.classList.remove('input__error--border');  
+    }
     return valid;
 }
 
