@@ -232,7 +232,7 @@ function writeInName() {
     nameInput2.classList.remove('input__error--border');
   }
   return valid;
-}
+};
 
  function guessFeedbackOne() {
    if (parseInt(guessInput1.value) < randNum) {
@@ -241,6 +241,7 @@ function writeInName() {
      scoresStanding1.innerHTML = "that's too high";
    } else {
      scoresStanding1.innerHTML = "BOOM!";
+     plusMinTen();
      cardSection.insertAdjacentHTML("afterbegin",
         `<article class="article__card">
           <article class="article__card--header">
@@ -258,11 +259,8 @@ function writeInName() {
             <img src="images/close_btn.png" class="article__card--img">
           </article>
         </article>`)
-        parseInt(setRangeLow.value) - 10;
-        parseInt(setRangeHigh.value) + 10;
-        generateRandomNum();
    }
- }
+ };
 
  function guessFeedbackTwo() {
    if (parseInt(guessInput2.value) < randNum) {
@@ -271,7 +269,7 @@ function writeInName() {
      scoresStanding2.innerHTML = "that's too high";
    } else {
      scoresStanding2.innerHTML = "BOOM!";
-     addTen();
+     plusMinTen();
      cardSection.insertAdjacentHTML("afterbegin",
         `<article class="article__card">
           <article class="article__card--header">
@@ -290,18 +288,15 @@ function writeInName() {
           </article>
         </article>`)
    }
- }
+ };
 
- function addTen() {
-   // setRangeLow.innerHTML = setRangeLow.innerHTML-- * 10;
-   // console.log(setRangeLow.innerHTML--);
-   console.log(setRangeLow.innerHTML = (setRangeLow.innerHTML--) - 10);
-   // setRangeHigh.innerHTML = setRangeHigh.innerHTML++ * 10;
-   // console.log(setRangeHigh.innerHTML++);
-   console.log(setRangeHigh.innerHTML = (setRangeHigh.innerHTML++) + 10);
+ function plusMinTen() {
+   var min10 = setRangeLow.innerHTML - 10;
+   setRangeLow.innerHTML = min10;
+   var add10 = parseInt(setRangeHigh.innerHTML) + 10;
+   setRangeHigh.innerHTML = add10;
    // generateRandomNum();
- }
-
+ };
 
  function resetInputs() {
    nameInput1.value = "";
@@ -310,7 +305,7 @@ function writeInName() {
    guessInput2.value = "";
    resetGameBtn.disabled = true;
    document.querySelector('.article__range--form').reset();
- }
+ };
 
  function resetInnerHTML() {
    challenger1.innerHTML = "Challenger Name 1";
@@ -321,12 +316,12 @@ function writeInName() {
    scoresStanding2.innerHTML = "your standing";
    setRangeLow.innerHTML = 1;
    setRangeHigh.innerHTML = 100;
- }
+ };
 
  function submitTimeout() {
    setTimeout(guessFeedbackOne, 100);
    setTimeout(guessFeedbackTwo, 100);
- }
+ };
 
  function enableUpdateBtn() {
    if (minRangeInput.value !== "" && maxRangeInput.value !== "") {
