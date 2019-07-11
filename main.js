@@ -36,9 +36,8 @@ var rangeInputErrorMsg1 = document.querySelector('.error__set--range-msg1');
 var rangeInputError2= document.querySelector('.error__set--range2');
 var rangeInputErrorMsg2 = document.querySelector('.error__set--range-msg2');
 
-generateRandomNum(defaultMin, defaultMax);
-
 // EVENT LISTENERS
+// CLEAR BUTTON FUNCTIONALITY
 guessInput1.addEventListener('keyup', enableClearBtn)
 
 guessInput2.addEventListener('keyup', enableClearBtn)
@@ -121,21 +120,29 @@ minRangeInput.addEventListener('keyup', enableUpdateBtn);
 maxRangeInput.addEventListener('keyup', enableUpdateBtn);
 
 updateBtn.addEventListener('click', function(e) {
-    e.preventDefault();   
+    e.preventDefault();
       checkErrors(e);
       if (verifyRange == true) {
-      updateRange();    
+      updateRange();
       setCustomRange();
       }
-   
 });
+
+// FUNCTIONS //
+generateRandomNum(defaultMin, defaultMax);
+
+function generateRandomNum(min, max) {
+    randNum = Math.floor(Math.random() * (max - min) + min);
+    console.log(randNum);
+    return randNum;
+   };
 
 function checkErrors(e) {
     e.preventDefault(e);
-    if (minRangeInput.value > maxRangeInput.value && maxRangeInput.value <        minRangeInput.value) {
-      document.querySelector('#range__input--min').style.border = "2px solid #dd1972";
-      document.querySelector('#range__input--max').style.border = "2px solid #dd1972";
-      document.querySelector('.range__btn--update').style.margin = "0 0 20px 0";
+    if (minRangeInput.value > maxRangeInput.value && maxRangeInput.value < minRangeInput.value) {
+    document.querySelector('#range__input--min').style.border = "2px solid #dd1972";
+    document.querySelector('#range__input--max').style.border = "2px solid #dd1972";
+    document.querySelector('.range__btn--update').style.margin = "0 0 20px 0";
     rangeInputError1.hidden = false;
     rangeInputErrorMsg1.hidden = false;
     rangeInputError2.hidden = false;
@@ -151,10 +158,9 @@ function checkErrors(e) {
     rangeInputError2.hidden = true;
     rangeInputErrorMsg2.hidden = true;
     verifyRange = true;
-    }
-}
+  };
+  };
 
-// FUNCTIONS //
 function updateRange() {
     minRangeInput = document.querySelector('#range__input--min').value;
     maxRangeInput = document.querySelector('#range__input--max').value;
@@ -162,13 +168,7 @@ function updateRange() {
     minRangeInput.value = "";
     setRangeHigh.innerHTML = maxRangeInput || 100;
     maxRangeInput.value = "";
-   }
-
-function generateRandomNum(min, max) {
-    randNum = Math.floor(Math.random() * (max - min) + min);
-    console.log(randNum);
-    return randNum;
-   };
+  };
 
 function setCustomRange(min, max) {
     defaultMin = minRangeInput;
