@@ -117,24 +117,47 @@ submitButton.addEventListener('click', function(e) {
 
 // UPDATE BUTTON FUNCTIONALITY //
 minRangeInput.addEventListener('keyup', enableUpdateBtn);
+
 maxRangeInput.addEventListener('keyup', enableUpdateBtn);
 
 updateBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    // debugger;
-    var validity = displayRangeError();
-    if (validity === true) {
-    // removeRangeError();
-    updateRange();
-    setCustomRange();
-    }
+    e.preventDefault();   
+      checkErrors(e);
+      if (verifyRange == true) {
+      updateRange();    
+      setCustomRange();
+      }
+   
 });
 
+function checkErrors(e) {
+    e.preventDefault(e);
+    if (minRangeInput.value > maxRangeInput.value && maxRangeInput.value <        minRangeInput.value) {
+      document.querySelector('#range__input--min').style.border = "2px solid #dd1972";
+      document.querySelector('#range__input--max').style.border = "2px solid #dd1972";
+      document.querySelector('.range__btn--update').style.margin = "0 0 20px 0";
+    rangeInputError1.hidden = false;
+    rangeInputErrorMsg1.hidden = false;
+    rangeInputError2.hidden = false;
+    rangeInputErrorMsg2.hidden = false;
+    verifyRange = false;
+    } else {
+    e.preventDefault();
+    document.querySelector('#range__input--min').style.border = "2px solid #d0d2d3";
+    document.querySelector('#range__input--max').style.border = "2px solid #d0d2d3";
+    document.querySelector('.range__btn--update').style.margin = "0 0 0 0";
+    rangeInputError1.hidden = true;
+    rangeInputErrorMsg1.hidden = true;
+    rangeInputError2.hidden = true;
+    rangeInputErrorMsg2.hidden = true;
+    verifyRange = true;
+    }
+}
 
 // FUNCTIONS //
 function updateRange() {
-    minRangeInput = parseInt(document.querySelector('#range__input--min').value);
-    maxRangeInput = parseInt(document.querySelector('#range__input--max').value);
+    minRangeInput = document.querySelector('#range__input--min').value;
+    maxRangeInput = document.querySelector('#range__input--max').value;
     setRangeLow.innerHTML = minRangeInput || 1;
     minRangeInput.value = "";
     setRangeHigh.innerHTML = maxRangeInput || 100;
@@ -183,30 +206,6 @@ function stayInRange() {
     return valid;
 };
 
-function displayRangeError() {
-  var valid = true;
-  if (minRangeInput.value > maxRangeInput.value || maxRangeInput.value < minRangeInput.value) {
-    valid = false;
-    maxRangeInput.classList.add('input__error--border');
-    minRangeInput.classList.add('input__error--border');
-    updateBtn.classList.add('btn__margin');
-    rangeInputError1.hidden = false;
-    rangeInputErrorMsg1.hidden = false;
-    rangeInputError2.hidden = false;
-    rangeInputErrorMsg2.hidden = false;
-  };
-  if (valid === true) {
-    maxRangeInput.classList.remove('input__error--border');
-    minRangeInput.classList.remove('input__error--border');
-    updateBtn.classList.remove('btn__margin');
-    rangeInputError1.hidden = true;
-    rangeInputErrorMsg1.hidden = true;
-    rangeInputError2.hidden = true;
-    rangeInputErrorMsg2.hidden = true;
-  }
-  return valid
-};
-
 function writeInName() {
   var valid = true;
   if (nameInput1.value === "") {
@@ -214,23 +213,26 @@ function writeInName() {
     emptyNameMsg1.hidden = false;
     nameInput1.classList.add('input__error--border');
     valid = false;
-  }
+  };
+
   if (valid === true) {
     emptyName1.hidden = true;
     emptyNameMsg1.hidden = true;
     nameInput1.classList.remove('input__error--border');
-  }
+  };
+
   if (nameInput2.value === "") {
     emptyName2.hidden = false;
     emptyNameMsg2.hidden = false;
     nameInput2.classList.add('input__error--border');
     valid = false;
-  }
+  };
+
   if (valid === true) {
     emptyName2.hidden = true;
     emptyNameMsg2.hidden = true;
     nameInput2.classList.remove('input__error--border');
-  }
+  };
   return valid;
 };
 
@@ -259,7 +261,7 @@ function writeInName() {
             <img src="images/close_btn.png" class="article__card--img">
           </article>
         </article>`)
-   }
+   };
  };
 
  function guessFeedbackTwo() {
@@ -287,7 +289,7 @@ function writeInName() {
             <img src="images/close_btn.png" class="article__card--img">
           </article>
         </article>`)
-   }
+   };
  };
 
  function plusMinTen() {
@@ -328,7 +330,7 @@ function writeInName() {
        updateBtn.disabled = false;
    } else {
    updateBtn.disabled = true;
-  }
+  };
 };
 
  function enableClearBtn() {
@@ -336,7 +338,7 @@ function writeInName() {
     clearGameBtn.disabled = false;
   } else {
   clearGameBtn.disabled = true;
- }
+ };
 };
 
 function enableReset() {
@@ -344,7 +346,7 @@ function enableReset() {
     resetGameBtn.disabled = false;
   } else {
   resetGameBtn.disabled = true;
- }
+ };
 };
 
 function enableSubmit() {
@@ -352,5 +354,5 @@ function enableSubmit() {
     submitButton.disabled = false;
   } else {
   submitButton.disabled = true;
- }
+ };
 };
