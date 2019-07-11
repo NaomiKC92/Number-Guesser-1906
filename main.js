@@ -31,17 +31,14 @@ var emptyName1 = document.querySelector('.error__name1-empty');
 var emptyNameMsg1 = document.querySelector('.error__name1-empty-msg');
 var emptyName2 = document.querySelector('.error__name2-empty');
 var emptyNameMsg2 = document.querySelector('.error__name2-empty-msg');
-
 var rangeInputError1= document.querySelector('.error__set--range1');
 var rangeInputErrorMsg1 = document.querySelector('.error__set--range-msg1');
-
 var rangeInputError2= document.querySelector('.error__set--range2');
 var rangeInputErrorMsg2 = document.querySelector('.error__set--range-msg2');
 
 generateRandomNum(defaultMin, defaultMax);
 
 // EVENT LISTENERS
-
 guessInput1.addEventListener('keyup', enableClearBtn)
 
 guessInput2.addEventListener('keyup', enableClearBtn)
@@ -73,7 +70,6 @@ nameInput2.addEventListener('keyup', enableReset)
 guessInput1.addEventListener('keyup', enableReset)
 
 guessInput2.addEventListener('keyup', enableReset)
-
 
 resetGameBtn.addEventListener('click', function(e) {
   e.preventDefault();
@@ -139,9 +135,9 @@ updateBtn.addEventListener('click', function(e) {
 function updateRange() {
     minRangeInput = parseInt(document.querySelector('#range__input--min').value);
     maxRangeInput = parseInt(document.querySelector('#range__input--max').value);
-    setRangeLow.innerHTML = minRangeInput;
+    setRangeLow.innerHTML = minRangeInput || 1;
     minRangeInput.value = "";
-    setRangeHigh.innerHTML = maxRangeInput;
+    setRangeHigh.innerHTML = maxRangeInput || 100;
     maxRangeInput.value = "";
    }
 
@@ -236,7 +232,7 @@ function writeInName() {
     nameInput2.classList.remove('input__error--border');
   }
   return valid;
-}
+};
 
  function guessFeedbackOne() {
    if (parseInt(guessInput1.value) < randNum) {
@@ -245,6 +241,7 @@ function writeInName() {
      scoresStanding1.innerHTML = "that's too high";
    } else {
      scoresStanding1.innerHTML = "BOOM!";
+     plusMinTen();
      cardSection.insertAdjacentHTML("afterbegin",
         `<article class="article__card">
           <article class="article__card--header">
@@ -263,7 +260,7 @@ function writeInName() {
           </article>
         </article>`)
    }
- }
+ };
 
  function guessFeedbackTwo() {
    if (parseInt(guessInput2.value) < randNum) {
@@ -272,6 +269,7 @@ function writeInName() {
      scoresStanding2.innerHTML = "that's too high";
    } else {
      scoresStanding2.innerHTML = "BOOM!";
+     plusMinTen();
      cardSection.insertAdjacentHTML("afterbegin",
         `<article class="article__card">
           <article class="article__card--header">
@@ -290,7 +288,15 @@ function writeInName() {
           </article>
         </article>`)
    }
- }
+ };
+
+ function plusMinTen() {
+   var min10 = setRangeLow.innerHTML - 10;
+   setRangeLow.innerHTML = min10;
+   var add10 = parseInt(setRangeHigh.innerHTML) + 10;
+   setRangeHigh.innerHTML = add10;
+   generateRandomNum(min10, add10)
+ };
 
  function resetInputs() {
    nameInput1.value = "";
@@ -299,21 +305,23 @@ function writeInName() {
    guessInput2.value = "";
    resetGameBtn.disabled = true;
    document.querySelector('.article__range--form').reset();
- }
+ };
 
  function resetInnerHTML() {
    challenger1.innerHTML = "Challenger Name 1";
    challenger2.innerHTML = "Challenger Name 2";
    currentGuess1.innerHTML = "?";
    currentGuess2.innerHTML = "?";
-   scoresStanding1.innerHTML ="your standing";
-   scoresStanding2.innerHTML ="your standing";
- }
+   scoresStanding1.innerHTML = "your standing";
+   scoresStanding2.innerHTML = "your standing";
+   setRangeLow.innerHTML = 1;
+   setRangeHigh.innerHTML = 100;
+ };
 
  function submitTimeout() {
    setTimeout(guessFeedbackOne, 100);
    setTimeout(guessFeedbackTwo, 100);
- }
+ };
 
  function enableUpdateBtn() {
    if (minRangeInput.value !== "" && maxRangeInput.value !== "") {
