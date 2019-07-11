@@ -3,7 +3,6 @@
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
-  /* border: 1px solid red; */
 }
 
 body {
@@ -17,7 +16,6 @@ main {
 }
 
 /* HEADER */
-
 header {
   align-items: center;
   background-color: #404041;
@@ -66,7 +64,6 @@ header {
   height: 1px;
   width: 90px;
 }
-
 
 .main__section--left {
   background-color: #f7f7f7;
@@ -163,8 +160,8 @@ p {
 .article__challenge--form {
   display: flex;
   flex-direction: row;
-  width: 100%;
   justify-content: space-between;
+  width: 100%;
 }
 
 .challenge__input--name {
@@ -175,7 +172,6 @@ p {
 }
 
 .article__challenge--format-name {
-  /* margin-right: 80px; */
   width: 63%;
 }
 
@@ -227,15 +223,15 @@ figure {
   align-items: center;
 }
 
-.challenge__input--img {
-  height: 15px;
-  padding-right: 3px;
-  /* display: inline; */
-}
-
 figcaption {
   color: #dd1972;
   font-size: 15px;
+  /* display: inline; */
+}
+
+.challenge__input--img {
+  height: 15px;
+  padding-right: 3px;
   /* display: inline; */
 }
 
@@ -303,30 +299,27 @@ h4 {
   background-color: #d0d2d3;
   display: flex;
   flex-direction: column;
-  /* float: right; */
   width: 50%;
-  /* height: 100%; */
 }
 
 .article__card {
   align-items: center;
   background-color: #fff;
   border: 2px solid #6e6e6e;
-  width: 90%;
-  padding: 10px;
   display: flex;
   flex-direction: column;
   margin: 17px auto;
+  padding: 10px;
+  width: 90%;
   }
 
 .article__card--header {
   align-items: center;
+  border-bottom: 2px solid #d0d2d3;
   display: flex;
   justify-content: space-around;
-  width: 95%;
   padding-bottom: 10px;
-  border-bottom: 2px solid #d0d2d3;
-
+  width: 95%;
 }
 
 .article__card--win {
@@ -336,8 +329,8 @@ h4 {
 }
 
 h5 {
-  font-size: 28pt;
   color: #6e6e6e;
+  font-size: 28pt;
   font-family: 'Open Sans', sans-serif;
   margin-top: 15px;
 }
@@ -349,17 +342,16 @@ h5 {
 }
 
 .card__p--vs{
-  margin: 0;
   font-size: 16px;
+  margin: 0;
 }
 
-
 .article__card--data {
+  border-top: 2px solid #d0d2d3;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 95%;
-  border-top: 2px solid #d0d2d3;
   padding-top: 10px;
 }
 
@@ -368,9 +360,9 @@ h5 {
 }
 
 .card__data--p {
+  color: #6e6e6e;
   font-size: 18px;
   margin: 0;
-  color: #6e6e6e;
 }
 
 .card_data--p--bold {
@@ -418,28 +410,27 @@ h5 {
 
   .article__range {
     height: 238px;
-    padding: 10px;
     margin: 11px auto;
+    padding: 10px;
   }
 
   .range__btn--update {
     align-self: flex-start;
     height: 34px;
-    width: 37%;
     margin-top: 5px;
+    width: 37%;
   }
 
   .range__btn--update:disabled {
     background-color: #d0d2d3;
     height: 34px;
-    width: 37%;
     margin-top: 5px;
+    width: 37%;
   }
 
   .article__challenge {
-    padding: 10px;
     margin: 3px auto;
-
+    padding: 10px;
   }
 
   p {
@@ -449,8 +440,8 @@ h5 {
 
   .article__challenge--form {
     flex-direction: column;
-    width: 100%;
     height: 114px;
+    width: 100%;
   }
 
   .challenge__input--name {
@@ -472,13 +463,13 @@ h5 {
   }
 
   button {
-    width: 100%;
     height: 30px;
+    width: 100%;
   }
 
   button:disabled {
-    width: 100%;
     height: 30px;
+    width: 100%;
   }
 
   .input__error--border {
@@ -486,11 +477,11 @@ h5 {
   }
 
   .article__btns {
-    margin-top: 30px;
-    flex-direction: column;
     align-items: center;
-    width: 100%;
+    flex-direction: column;
+    margin-top: 30px;
     height: 127px;
+    width: 100%;
   }
 
   .challenger2__header {
@@ -544,9 +535,7 @@ h5 {
   .article__card--img {
     height: 23px;
   }
-
 }
-
 
 @media screen and (max-width: 725px) {
 
@@ -568,8 +557,8 @@ h5 {
   }
 
   .main__section--left {
-    width: 100%;
     border: none;
+    width: 100%;
 }
 
   .article__range,
@@ -581,7 +570,7 @@ h5 {
 
   .article__range--form {
     flex-direction: column;
-      height: 246px;
+    height: 246px;
   }
 
   .article__label {
@@ -603,15 +592,15 @@ h5 {
 
   .article__range {
     height: 246px;
-    padding: 10px;
     margin: 11px auto;
+    padding: 10px;
   }
 
   .range__btn--update {
     align-self: flex-start;
     height: 34px;
-    width: 37%;
     margin-top: 5px;
+    width: 37%;
   }
 
   .range__btn--update:disabled {
@@ -633,8 +622,8 @@ h5 {
 
   .article__challenge--form {
     flex-direction: column;
-    width: 100%;
     height: 114px;
+    width: 100%;
   }
 
   .challenge__input--name {
@@ -656,13 +645,13 @@ h5 {
   }
 
   button {
-    width: 100%;
     height: 30px;
+    width: 100%;
   }
 
   button:disabled {
-    width: 100%;
     height: 30px;
+    width: 100%;
   }
 
   .input__error--border {
@@ -670,11 +659,11 @@ h5 {
   }
 
   .article__btns {
-    margin-top: 30px;
-    flex-direction: column;
     align-items: center;
-    width: 100%;
+    flex-direction: column;
     height: 127px;
+    margin-top: 30px;
+    width: 100%;
   }
 
   .challenger2__header {
@@ -738,7 +727,6 @@ h5 {
   .article__card--img {
     height: 23px;
   }
-
 }
 
 
@@ -761,8 +749,8 @@ h5 {
   }
 
   .main__section--left {
-    width: 100%;
     border: none;
+    width: 100%;
 }
 
   .article__range,
@@ -773,7 +761,7 @@ h5 {
 
   .article__range--form {
     flex-direction: column;
-      height: 246px;
+    height: 246px;
   }
 
   .article__label {
@@ -795,21 +783,20 @@ h5 {
 
   .article__range {
     height: 240px;
-    padding: 10px;
     margin: 11px auto;
+    padding: 10px;
   }
 
   .range__btn--update {
     align-self: flex-start;
     height: 34px;
-    width: 37%;
     margin-top: 5px;
+    width: 37%;
   }
 
   .article__challenge {
-    padding: 10px;
     margin: 3px auto;
-
+    padding: 10px;
   }
 
   p {
@@ -819,8 +806,8 @@ h5 {
 
   .article__challenge--form {
     flex-direction: column;
-    width: 100%;
     height: 114px;
+    width: 100%;
   }
 
   .challenge__input--name {
@@ -842,13 +829,13 @@ h5 {
   }
 
   button {
-    width: 100%;
     height: 30px;
+    width: 100%;
   }
 
   button:disabled {
-    width: 100%;
     height: 30px;
+    width: 100%;
   }
 
   .input__error--border {
@@ -924,5 +911,4 @@ h5 {
   .article__card--img {
     height: 23px;
   }
-
 }
