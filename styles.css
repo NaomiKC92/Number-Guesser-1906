@@ -74,6 +74,8 @@ header {
   width: 50%;
 }
 
+/* UPDATE RANGE SECITON */
+
 .article__range {
   background-color: #fff;
   border: 2px solid #d0d2d3;
@@ -130,6 +132,8 @@ h3 {
   width: 23%;
   outline: none;
 }
+
+/* CHALLENGER INPUTS SECTION */
 
 .article__challenge {
   background-color: #fff;
@@ -252,6 +256,9 @@ figcaption {
   width: 93%;
 }
 
+
+/* RESULTS DISPLAY SECTION*/
+
 .article__scores--results {
   display: flex;
   flex-direction: row;
@@ -294,7 +301,7 @@ h4 {
   width: 2px;
 }
 
-/* right side */
+/* RIGHT SIDE OF PAGE */
 .main__section--right {
   background-color: #d0d2d3;
   display: flex;
