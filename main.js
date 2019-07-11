@@ -295,7 +295,7 @@ function writeInName() {
    setRangeLow.innerHTML = min10;
    var add10 = parseInt(setRangeHigh.innerHTML) + 10;
    setRangeHigh.innerHTML = add10;
-   // generateRandomNum();
+   generateRandomNum(min10, add10)
  };
 
  function resetInputs() {
